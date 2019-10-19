@@ -28,6 +28,12 @@
 		0319069A2359DA82001CA6CA /* ILikesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031906992359DA82001CA6CA /* ILikesService.swift */; };
 		0319069D2359DA9E001CA6CA /* ISharesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0319069C2359DA9E001CA6CA /* ISharesService.swift */; };
 		03CBD208235AC210001E1FFD /* VideoSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CBD207235AC210001E1FFD /* VideoSessionManager.swift */; };
+		03CBD20A235ACA15001E1FFD /* AdPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CBD209235ACA15001E1FFD /* AdPost.swift */; };
+		03CBD20C235ACF16001E1FFD /* IPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CBD20B235ACF16001E1FFD /* IPost.swift */; };
+		03CBD20E235ACF2C001E1FFD /* IContentPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CBD20D235ACF2C001E1FFD /* IContentPost.swift */; };
+		03CBD210235ACF46001E1FFD /* IBoxPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CBD20F235ACF46001E1FFD /* IBoxPost.swift */; };
+		03CBD213235ACF6D001E1FFD /* ContentPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CBD212235ACF6D001E1FFD /* ContentPost.swift */; };
+		03CBD215235ACF78001E1FFD /* BoxPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CBD214235ACF78001E1FFD /* BoxPost.swift */; };
 		FACA396843E4061581234D83 /* Pods_videoApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2468ED921B45B3F4DD66CD1D /* Pods_videoApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -55,6 +61,12 @@
 		031906992359DA82001CA6CA /* ILikesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ILikesService.swift; sourceTree = "<group>"; };
 		0319069C2359DA9E001CA6CA /* ISharesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ISharesService.swift; sourceTree = "<group>"; };
 		03CBD207235AC210001E1FFD /* VideoSessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoSessionManager.swift; sourceTree = "<group>"; };
+		03CBD209235ACA15001E1FFD /* AdPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdPost.swift; sourceTree = "<group>"; };
+		03CBD20B235ACF16001E1FFD /* IPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPost.swift; sourceTree = "<group>"; };
+		03CBD20D235ACF2C001E1FFD /* IContentPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IContentPost.swift; sourceTree = "<group>"; };
+		03CBD20F235ACF46001E1FFD /* IBoxPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IBoxPost.swift; sourceTree = "<group>"; };
+		03CBD212235ACF6D001E1FFD /* ContentPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentPost.swift; sourceTree = "<group>"; };
+		03CBD214235ACF78001E1FFD /* BoxPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxPost.swift; sourceTree = "<group>"; };
 		2468ED921B45B3F4DD66CD1D /* Pods_videoApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_videoApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D54DE6D9D9D9E927B582868 /* Pods-videoApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-videoApp.debug.xcconfig"; path = "Target Support Files/Pods-videoApp/Pods-videoApp.debug.xcconfig"; sourceTree = "<group>"; };
 		BF1EAE35D74262E5AD5C7FC5 /* Pods-videoApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-videoApp.release.xcconfig"; path = "Target Support Files/Pods-videoApp/Pods-videoApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -173,6 +185,7 @@
 		0319067C2359D6F8001CA6CA /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				03CBD211235ACF50001E1FFD /* Post */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -229,6 +242,19 @@
 				0319069C2359DA9E001CA6CA /* ISharesService.swift */,
 			);
 			path = Shares;
+			sourceTree = "<group>";
+		};
+		03CBD211235ACF50001E1FFD /* Post */ = {
+			isa = PBXGroup;
+			children = (
+				03CBD20B235ACF16001E1FFD /* IPost.swift */,
+				03CBD209235ACA15001E1FFD /* AdPost.swift */,
+				03CBD20D235ACF2C001E1FFD /* IContentPost.swift */,
+				03CBD212235ACF6D001E1FFD /* ContentPost.swift */,
+				03CBD20F235ACF46001E1FFD /* IBoxPost.swift */,
+				03CBD214235ACF78001E1FFD /* BoxPost.swift */,
+			);
+			path = Post;
 			sourceTree = "<group>";
 		};
 		23191A8342AC8CEFE39B1796 /* Frameworks */ = {
@@ -364,21 +390,27 @@
 			buildActionMask = 2147483647;
 			files = (
 				0319069D2359DA9E001CA6CA /* ISharesService.swift in Sources */,
+				03CBD20C235ACF16001E1FFD /* IPost.swift in Sources */,
 				0319069A2359DA82001CA6CA /* ILikesService.swift in Sources */,
 				031906802359D890001CA6CA /* PostsService.swift in Sources */,
 				0319067E2359D7B7001CA6CA /* ServiceProvider.swift in Sources */,
+				03CBD20E235ACF2C001E1FFD /* IContentPost.swift in Sources */,
 				031906652359D576001CA6CA /* ViewController.swift in Sources */,
+				03CBD210235ACF46001E1FFD /* IBoxPost.swift in Sources */,
 				031906942359DA2B001CA6CA /* ICommentsService.swift in Sources */,
 				031906972359DA4F001CA6CA /* IViewsService.swift in Sources */,
 				031906882359D904001CA6CA /* LikesService.swift in Sources */,
 				031906822359D89E001CA6CA /* BoxesService.swift in Sources */,
+				03CBD213235ACF6D001E1FFD /* ContentPost.swift in Sources */,
 				0319068E2359D9D7001CA6CA /* IPostsService.swift in Sources */,
 				031906912359D9F9001CA6CA /* IBoxesService.swift in Sources */,
+				03CBD215235ACF78001E1FFD /* BoxPost.swift in Sources */,
 				031906862359D8F3001CA6CA /* ViewsService.swift in Sources */,
 				0319068C2359D9AD001CA6CA /* BasicService.swift in Sources */,
 				031906612359D576001CA6CA /* AppDelegate.swift in Sources */,
 				031906632359D576001CA6CA /* SceneDelegate.swift in Sources */,
 				031906842359D8CF001CA6CA /* CommentsService.swift in Sources */,
+				03CBD20A235ACA15001E1FFD /* AdPost.swift in Sources */,
 				03CBD208235AC210001E1FFD /* VideoSessionManager.swift in Sources */,
 				0319068A2359D91E001CA6CA /* SharesService.swift in Sources */,
 			);

@@ -35,37 +35,37 @@ class ServiceProvider {
     // MARK: - Properties
     
     
-    private let configuration: URLSessionConfiguration
-    public let sessionManager: SessionManager
-    
-    private let configurationCache: URLSessionConfiguration
-    public let sessionManagerCache: SessionManager
+//    private let configuration: URLSessionConfiguration
+//    public let sessionManager: SessionManager
+//
+//    private let configurationCache: URLSessionConfiguration
+//    public let sessionManagerCache: SessionManager
     
     // MARK: - Memory managments
     
-    public init() {
+//    public init()  {
         
         
-        // SessionManager without cache
-        configuration = URLSessionConfiguration.default
-        configuration.timeoutIntervalForRequest = defaultHTTPTimeoutInterval
-
-        sessionManager = PlatoonSessionManager(configuration: configuration)
-        accessTokenAdapter = AccessTokenAdapter(storageService: storageService)
-
-        sessionManager.adapter = accessTokenAdapter
-
-        // SessionManager with cache
-        configurationCache = URLSessionConfiguration.default
-        configurationCache.timeoutIntervalForRequest = defaultHTTPTimeoutInterval
-        
-        configurationCache.requestCachePolicy = .returnCacheDataElseLoad
-        configurationCache.urlCache = URLCache(memoryCapacity: Consts.memoryCapacity,
-                                          diskCapacity: Consts.diskCapacity,
-                                          diskPath: "Alamofire_cache")
-        
-        sessionManagerCache = PlatoonSessionManager(configuration: configurationCache)
-        sessionManagerCache.adapter = accessTokenAdapter
-    }
+//        // SessionManager without cache
+//        configuration = URLSessionConfiguration.default
+//        configuration.timeoutIntervalForRequest = defaultHTTPTimeoutInterval
+//
+//        sessionManager = PlatoonSessionManager(configuration: configuration)
+//        accessTokenAdapter = AccessTokenAdapter(storageService: storageService)
+//
+//        sessionManager.adapter = accessTokenAdapter
+//
+//        // SessionManager with cache
+//        configurationCache = URLSessionConfiguration.default
+//        configurationCache.timeoutIntervalForRequest = defaultHTTPTimeoutInterval
+//
+//        configurationCache.requestCachePolicy = .returnCacheDataElseLoad
+//        configurationCache.urlCache = URLCache(memoryCapacity: Consts.memoryCapacity,
+//                                          diskCapacity: Consts.diskCapacity,
+//                                          diskPath: "Alamofire_cache")
+//
+//        sessionManagerCache = PlatoonSessionManager(configuration: configurationCache)
+//        sessionManagerCache.adapter = accessTokenAdapter
+//    }
 }
 
