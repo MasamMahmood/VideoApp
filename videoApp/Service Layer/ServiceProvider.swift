@@ -22,12 +22,11 @@ class ServiceProvider {
 
     
     // MARK: - Properties
-    
-    
-    private let configuration: URLSessionConfiguration
     public let sessionManager: SessionManager
-    private let configurationCache: URLSessionConfiguration
     public let sessionManagerCache: SessionManager
+    public let postService: IPostsService
+    private let configuration: URLSessionConfiguration
+    private let configurationCache: URLSessionConfiguration
     
     // MARK: - Memory managments
     
@@ -44,6 +43,8 @@ class ServiceProvider {
                                           diskCapacity: Consts.diskCapacity,
                                           diskPath: "Alamofire_cache")
         sessionManagerCache = VideoSessionManager(configuration: configurationCache)
+        
+        postService = PostsService(sessionManager: sessionManager)
     }
 }
 

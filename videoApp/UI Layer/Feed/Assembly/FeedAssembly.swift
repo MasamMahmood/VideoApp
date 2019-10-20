@@ -11,14 +11,10 @@ import UIKit
 // MARK: - Module Build
 
 class FeedAssembly {
-    func buildModule() -> FeedPresentationModelInterface? {
+    func buildModule() -> FeedViewController {
         let view = FeedViewController()
-        let presenter = FeedPresentationModel()
-        
-        presenter.view = view
-
+        let presenter = FeedPresentationModel(view: view, service: ServiceProvider.instance.postService)
         view.output = presenter
-
-        return presenter
+        return view
     }
 }

@@ -7,8 +7,6 @@
 //
 
 protocol FeedPresentationModelInterface: class {
-    var view: FeedViewInput? { get set }
-}
-
-protocol FeedPresentationModelDelegate: class {
+    var view: FeedViewInput { get }
+    var service: IPostsService { get }
 }

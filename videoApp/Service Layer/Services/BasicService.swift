@@ -9,7 +9,7 @@
 import Alamofire
 
 class BasicService {
-    static let basicURL = "https://api.whatsviralapp.com/v2/"
+    let basicURL = "https://api.whatsviralapp.com/v2/"
     enum Endpoints: String {
         case posts
         case boxes
@@ -18,20 +18,12 @@ class BasicService {
         case likes
         case shares
     }
-    private let networking: ServiceProvider
-
-    var sessionManager: SessionManager {
-        return networking.sessionManager
-    }
-
-    var sessionManagerCache: SessionManager {
-        return networking.sessionManagerCache
-    }
+    let sessionManager: SessionManager
 
     // MARK: - Memory managment
 
-    required public init(networking: ServiceProvider) {
-        self.networking = networking
+    required public init(sessionManager: SessionManager) {
+        self.sessionManager = sessionManager
     }
     
 }

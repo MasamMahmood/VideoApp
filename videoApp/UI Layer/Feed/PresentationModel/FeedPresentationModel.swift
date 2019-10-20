@@ -8,32 +8,23 @@
 
 // MARK: - Stored Properties
 
-class FeedPresentationModel {
-    private weak var viewInput: FeedViewInput?
-}
-
-// MARK: - FeedPresenterInterface Implementation
-
-extension FeedPresentationModel: FeedPresentationModelInterface {
-    // MARK: Structural Computed Properties
-
+class FeedPresentationModel: FeedPresentationModelInterface {
+    var view: FeedViewInput
+    var service: IPostsService
     
-    var view: FeedViewInput? {
-        get {
-            return viewInput
-        }
-        set {
-            viewInput = newValue
-        }
+    init(view: FeedViewInput, service: IPostsService) {
+        self.view = view
+        self.service = service
     }
-
 }
-
 
 // MARK: - FeedViewOutput Implementation
 
 extension FeedPresentationModel: FeedViewOutput {
-    func viewDestroyed() {
-        
+    func feedRequested(completion: @escaping(([IPost] )-> Void)) {
+        service.getPosts(userId: nil, startingId: nil, afterId: nil, pageSize: "20") { (posts) in
+            completion(posts)
+        }
     }
+
 }

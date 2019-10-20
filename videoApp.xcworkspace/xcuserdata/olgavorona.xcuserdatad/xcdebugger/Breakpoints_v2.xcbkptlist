@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "9DAE8CE4-FF6C-4091-A699-D7128D48AB0E"
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "28250A25-3E32-4115-83FA-9F99C1D950B0"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "videoApp/UI Layer/Feed/PresentationModel/FeedPresentationModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "feedRequested()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D352EC52-C1FC-48BA-9EC2-35CABD4DB035"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "videoApp/UI Layer/Feed/PresentationModel/FeedPresentationModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "feedRequested()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "D352EC52-C1FC-48BA-9EC2-35CABD4DB035 - 3514843b5ee7055c"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "videoApp.FeedPresentationModel.feedRequested() -&gt; ()"
+                  moduleName = "videoApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/olgavorona/Documents/Projects/video-app-ios/videoApp/UI%20Layer/Feed/PresentationModel/FeedPresentationModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "25">
+               </Location>
+               <Location
+                  uuid = "D352EC52-C1FC-48BA-9EC2-35CABD4DB035 - b82bcc6ec23844be"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Array&lt;videoApp.IPost&gt;) -&gt; () in videoApp.FeedPresentationModel.feedRequested() -&gt; ()"
+                  moduleName = "videoApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/olgavorona/Documents/Projects/video-app-ios/videoApp/UI%20Layer/Feed/PresentationModel/FeedPresentationModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "27"
+                  endingLineNumber = "27"
+                  offsetFromSymbolStart = "16">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9A115750-FDEC-4DCD-B3AD-BB42A54E6FE6"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "videoApp/UI Layer/Feed/View/Controller/FeedViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

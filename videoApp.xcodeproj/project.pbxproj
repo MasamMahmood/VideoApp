@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		031906612359D576001CA6CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031906602359D576001CA6CA /* AppDelegate.swift */; };
 		031906632359D576001CA6CA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031906622359D576001CA6CA /* SceneDelegate.swift */; };
-		031906652359D576001CA6CA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031906642359D576001CA6CA /* ViewController.swift */; };
 		031906682359D576001CA6CA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 031906662359D576001CA6CA /* Main.storyboard */; };
 		0319066A2359D578001CA6CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 031906692359D578001CA6CA /* Assets.xcassets */; };
 		0319066D2359D578001CA6CA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0319066B2359D578001CA6CA /* LaunchScreen.storyboard */; };
@@ -45,6 +44,7 @@
 		03CBD234235B2803001E1FFD /* FeedBoxTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CBD232235B2803001E1FFD /* FeedBoxTableViewCell.swift */; };
 		03CBD235235B2803001E1FFD /* FeedBoxTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03CBD233235B2803001E1FFD /* FeedBoxTableViewCell.xib */; };
 		03CBD237235B295E001E1FFD /* FeedContentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CBD236235B295E001E1FFD /* FeedContentTableViewCell.swift */; };
+		03DC3D16235CA15D009EC246 /* TableViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DC3D15235CA15D009EC246 /* TableViewHelper.swift */; };
 		FACA396843E4061581234D83 /* Pods_videoApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2468ED921B45B3F4DD66CD1D /* Pods_videoApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -52,7 +52,6 @@
 		0319065D2359D576001CA6CA /* videoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = videoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		031906602359D576001CA6CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		031906622359D576001CA6CA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		031906642359D576001CA6CA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		031906672359D576001CA6CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		031906692359D578001CA6CA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0319066C2359D578001CA6CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -89,6 +88,7 @@
 		03CBD232235B2803001E1FFD /* FeedBoxTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedBoxTableViewCell.swift; sourceTree = "<group>"; };
 		03CBD233235B2803001E1FFD /* FeedBoxTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedBoxTableViewCell.xib; sourceTree = "<group>"; };
 		03CBD236235B295E001E1FFD /* FeedContentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedContentTableViewCell.swift; sourceTree = "<group>"; };
+		03DC3D15235CA15D009EC246 /* TableViewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewHelper.swift; sourceTree = "<group>"; };
 		2468ED921B45B3F4DD66CD1D /* Pods_videoApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_videoApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D54DE6D9D9D9E927B582868 /* Pods-videoApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-videoApp.debug.xcconfig"; path = "Target Support Files/Pods-videoApp/Pods-videoApp.debug.xcconfig"; sourceTree = "<group>"; };
 		BF1EAE35D74262E5AD5C7FC5 /* Pods-videoApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-videoApp.release.xcconfig"; path = "Target Support Files/Pods-videoApp/Pods-videoApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -131,7 +131,6 @@
 				031906742359D690001CA6CA /* Service Layer */,
 				031906602359D576001CA6CA /* AppDelegate.swift */,
 				031906622359D576001CA6CA /* SceneDelegate.swift */,
-				031906642359D576001CA6CA /* ViewController.swift */,
 				031906662359D576001CA6CA /* Main.storyboard */,
 				031906692359D578001CA6CA /* Assets.xcassets */,
 				0319066B2359D578001CA6CA /* LaunchScreen.storyboard */,
@@ -154,6 +153,7 @@
 		031906752359D69E001CA6CA /* UI Layer */ = {
 			isa = PBXGroup;
 			children = (
+				03DC3D14235CA14C009EC246 /* Common */,
 				03CBD216235B2561001E1FFD /* Feed */,
 				0319067A2359D6E1001CA6CA /* Comments */,
 				031906792359D6CB001CA6CA /* Boxes */,
@@ -346,6 +346,14 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		03DC3D14235CA14C009EC246 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				03DC3D15235CA15D009EC246 /* TableViewHelper.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 		23191A8342AC8CEFE39B1796 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -489,7 +497,6 @@
 				0319067E2359D7B7001CA6CA /* ServiceProvider.swift in Sources */,
 				03CBD227235B2561001E1FFD /* FeedPresentationModel.swift in Sources */,
 				03CBD20E235ACF2C001E1FFD /* IContentPost.swift in Sources */,
-				031906652359D576001CA6CA /* ViewController.swift in Sources */,
 				03CBD210235ACF46001E1FFD /* IBoxPost.swift in Sources */,
 				031906942359DA2B001CA6CA /* ICommentsService.swift in Sources */,
 				031906972359DA4F001CA6CA /* IViewsService.swift in Sources */,
@@ -503,6 +510,7 @@
 				03CBD225235B2561001E1FFD /* FeedEntity.swift in Sources */,
 				03CBD237235B295E001E1FFD /* FeedContentTableViewCell.swift in Sources */,
 				03CBD215235ACF78001E1FFD /* BoxPost.swift in Sources */,
+				03DC3D16235CA15D009EC246 /* TableViewHelper.swift in Sources */,
 				031906862359D8F3001CA6CA /* ViewsService.swift in Sources */,
 				0319068C2359D9AD001CA6CA /* BasicService.swift in Sources */,
 				031906612359D576001CA6CA /* AppDelegate.swift in Sources */,

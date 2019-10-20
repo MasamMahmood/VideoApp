@@ -7,23 +7,28 @@
 //
 
 import Foundation
-import Unbox
 
-class Post: IPost, Unboxable {
-    let id: String
-    let title: String
-    let type: String
-    let width: Int
-    let height: Int
-    let createAt: Date
+class Post: IPost {
+    var id: String = ""
+    var title: String = ""
+    var type: String = ""
+    var width: Int = 0
+    var height: Int = 0
+    var createAt: Date = Date()
     
-    required init(unboxer: Unboxer) throws {
-        id = try unboxer.unbox(key: "id")
-        title = try unboxer.unbox(key: "title")
-        type = try unboxer.unbox(key: "type")
-        width = try unboxer.unbox(key: "width")
-        height = try unboxer.unbox(key: "height")
-        let dateString: String = try unboxer.unbox(key: "createAt")
-        createAt = Date()
+    required init(dic: [String : Any]) {
+        if let id = dic["id"] as? String,
+            let title = dic["title"] as? String,
+            let type = dic["type"] as? String,
+            let width = dic["width"] as? Int,
+            let height = dic["height"] as? Int,
+            let dateString = dic["created_at"] as? String {
+            self.id = id
+            self.title = title
+            self.type = type
+            self.width = width
+            self.height = height
+            createAt = Date()
+        }
     }
 }

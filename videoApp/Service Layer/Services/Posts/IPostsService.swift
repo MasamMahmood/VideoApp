@@ -9,5 +9,9 @@
 import Foundation
 
 protocol IPostsService {
-    
+    func getPosts(userId: String?,
+                  startingId: String?,
+                  afterId: String?,
+                  pageSize: String,
+                  completion:@escaping (([IPost]) -> Void))
 }

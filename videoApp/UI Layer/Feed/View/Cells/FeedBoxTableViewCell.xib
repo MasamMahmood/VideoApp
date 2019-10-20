@@ -38,6 +38,7 @@
                         </constraints>
                     </stackView>
                 </subviews>
+                <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="rDf-u9-aSL" secondAttribute="trailing" id="eJO-KO-6E7"/>
                     <constraint firstItem="rDf-u9-aSL" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="fwP-n4-Bk4"/>

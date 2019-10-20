@@ -9,21 +9,26 @@
 import Unbox
 
 class ContentPost: Post, IContentPost {
-    let thumbnailUrl: String?
-    let postUrl: String
-    let commentsCount: Int
-    let views: Int
-    let likes: Int
-    let shares: Int
+    var thumbnailUrl: String? = nil
+    var postUrl: String = ""
+    var commentsCount: Int = 0
+    var views: Int = 0
+    var likes: Int = 0
+    var shares: Int = 0
     
-    required init(unboxer: Unboxer) throws {
-        thumbnailUrl = try unboxer.unbox(key: "thumbnailUrl")
-        postUrl = try unboxer.unbox(key: "postUrl")
-        commentsCount = try unboxer.unbox(key: "commentsCount")
-        views = try unboxer.unbox(key: "views")
-        likes = try unboxer.unbox(key: "likes")
-        shares = try unboxer.unbox(key: "shares")
-        try super.init(unboxer: unboxer)
+    required init(dic: [String : Any]) {
+        if let postUrl = dic["postUrl"] as? String,
+            let commentsCount = dic["commentsCount"] as? Int,
+            let views = dic["views"] as? Int,
+            let likes = dic["likes"] as? Int,
+            let shares = dic["shares"] as? Int {
+            self.postUrl = postUrl
+            self.commentsCount = commentsCount
+            self.views = views
+            self.likes = likes
+            self.shares = shares
+            self.thumbnailUrl = dic["thumbnailUrl"] as? String
+        }
+        super.init(dic: dic)
     }
 }
-

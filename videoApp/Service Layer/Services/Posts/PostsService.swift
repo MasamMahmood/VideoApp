@@ -10,9 +10,36 @@ import Foundation
 
 class PostsService: BasicService, IPostsService {
     
-    func getPosts(userId: String?, startingId: String?, afterId: String?, pageSize: String) {
+    func getPosts(userId: String?,
+                  startingId: String?,
+                  afterId: String?,
+                  pageSize: String,
+                  completion:@escaping (([IPost]) -> Void)) {
+        let urlString = basicURL + Endpoints.posts.rawValue
+        let url: URL! = URL(string: urlString)
+        let params = ["userId": UUID().uuidString, "pageSize": pageSize] as [String : Any]
         
+        let request = sessionManager.request(url, method: .get, parameters: params)
+        request.responseJSON { (response) in
+            switch response.result {
+            case .success(let data):
+                guard let result = data as? [String: Any],
+                    let obj = result["Items"] as? [[String: Any]] else {
+                        completion([])
+                        return
+                }
+                var posts:[IPost] = []
+                for post in obj {
+                    posts.append(Post(dic: post))
+                }
+                completion(posts)
+            case .failure(_):
+                completion([])
+            }
+        }
+        request.resume()
     }
+    
     
 //    Posts endpoint:
 //    https://api.whatsviralapp.com/v2/posts

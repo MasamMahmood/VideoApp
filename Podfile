@@ -7,6 +7,5 @@ target 'videoApp' do
 
   # Pods for videoApp
   pod 'Alamofire', '4.9.0'
-  pod 'Unbox'
   pod 'Player', '~> 0.13.0'
 end

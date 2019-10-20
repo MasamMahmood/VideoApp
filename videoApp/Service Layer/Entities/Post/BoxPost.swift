@@ -10,19 +10,28 @@ import Foundation
 import Unbox
 
 class BoxPost: Post, IBoxPost {
-    let thumbnailUrl: String
-    let animationUrl: String
-    let status: String
-    let code: String
-    let prizeUrl: String
-    let prizeType: String
+    var thumbnailUrl: String = ""
+    var animationUrl: String = ""
+    var status: String = ""
+    var code: String = ""
+    var prizeUrl: String = ""
+    var prizeType: String = ""
     
-    required init(unboxer: Unboxer) throws {
-        thumbnailUrl = try unboxer.unbox(key: "thumbnailUrl")
-        animationUrl = try unboxer.unbox(key: "animationUrl")
-        status = try unboxer.unbox(key: "status")
-        code = try unboxer.unbox(key: "code")
-        prizeUrl = try unboxer.unbox(key: "prizeUrl")
-        prizeType = try unboxer.unbox(key: "prizeType")
-        try super.init(unboxer: unboxer)    }
+    required init(dic: [String : Any]) {
+        if let animationUrl = dic["animationUrl"] as? String,
+            let thumbnailUrl = dic["thumbnailUrl"] as? String,
+            let status = dic["status"] as? String,
+            let code = dic["code"] as? String,
+            let prizeUrl = dic["prizeUrl"] as? String,
+            let prizeType = dic["prizeType"] as? String {
+            self.animationUrl = animationUrl
+            self.thumbnailUrl = thumbnailUrl
+            self.status = status
+            self.code = code
+            self.prizeUrl = prizeUrl
+            self.prizeType = prizeType
+        }
+        super.init(dic: dic)
+    }
+    
 }

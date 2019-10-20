@@ -15,4 +15,5 @@ protocol FeedViewInput: class {
 }
 
 protocol FeedViewOutput: class {
+    func feedRequested(completion: @escaping(([IPost] )-> Void))
 }

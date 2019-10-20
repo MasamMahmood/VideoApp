@@ -9,12 +9,13 @@
 import UIKit
 import Player
 
-class FeedBoxTableViewCell: UITableViewCell, PlayerDelegate, PlayerPlaybackDelegate {
+class FeedBoxTableViewCell: UITableViewCell, PlayerDelegate, PlayerPlaybackDelegate, ICollectionCellFromNib {
+    static var reuseIdentifier: String = "FeedBoxTableViewCell"
     
     @IBOutlet weak var videoContainer: UIView!
     @IBOutlet weak var actionsContainer: UIStackView!
     @IBOutlet weak var mockImage: UIImageView!
-    let player = Player()
+    private let player = Player()
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -36,8 +37,8 @@ class FeedBoxTableViewCell: UITableViewCell, PlayerDelegate, PlayerPlaybackDeleg
 //        self.player.didMove(toParent: self)
     }
     
-    func setup(with: IContentPost) {
-        player.url = URL(string: "https://media-cont.s3-us-west-1.amazonaws.com/encoded-web/2019/10/16/auto_1571198030786.mp4") 
+    func setup(with post: IPost) {
+        player.url = URL(string: "https://media-cont.s3-us-west-1.amazonaws.com/encoded-web/2019/10/16/auto_1571198030786.mp4")
     }
     
     func playerReady(_ player: Player) {
