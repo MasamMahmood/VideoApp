@@ -9,7 +9,7 @@
 import Foundation
 import Alamofire
 
-class PlatoonSessionManager: SessionManager {
+class VideoSessionManager: SessionManager {
     override func request(_ url: URLConvertible,
                           method: HTTPMethod = .get,
                           parameters: Parameters? = nil,

@@ -6,10 +6,9 @@
 //  Copyright © 2019 ov. All rights reserved.
 //
 
-protocol FeedPresenterInterface: class {
-    var interactor: FeedInteractorInput? { get set }
+protocol FeedPresentationModelInterface: class {
     var view: FeedViewInput? { get set }
 }
 
-protocol FeedPresenterDelegate: class {
+protocol FeedPresentationModelDelegate: class {
 }

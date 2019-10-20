@@ -11,6 +11,7 @@ import UIKit
 //MARK: - Dependences & IBOutlets & IBActions & Life Cycle
 
 class FeedViewController: UIViewController {
+    @IBOutlet weak var tableView: UITableView!
     private var viewOutput: FeedViewOutput?
 }
 

@@ -11,15 +11,12 @@ import UIKit
 // MARK: - Module Build
 
 class FeedAssembly {
-    func buildModule() -> FeedPresenterInterface? {
+    func buildModule() -> FeedPresentationModelInterface? {
         let view = FeedViewController()
-        let interactor = FeedInteractor()
-        let presenter = FeedPresenter()
+        let presenter = FeedPresentationModel()
         
         presenter.view = view
-        presenter.interactor = interactor
 
-        interactor.output = presenter
         view.output = presenter
 
         return presenter
