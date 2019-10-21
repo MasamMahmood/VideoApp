@@ -19,6 +19,11 @@ class FeedViewController: UIViewController {
         let presenter = FeedPresentationModel(view: self, service: ServiceProvider.instance.postService)
         self.output = presenter
         setupTableView()
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(self.appEnteredFromBackground),
+                                               name: UIApplication.didEnterBackgroundNotification,
+                                               object: nil)
+
         viewOutput?.feedRequested(completion: { [weak self] posts in
             guard let self = self else { return }
             self.posts = posts
@@ -26,10 +31,23 @@ class FeedViewController: UIViewController {
         })
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        pausePlayeVideos()
+    }
+    
+    @objc func appEnteredFromBackground() {
+        ASVideoPlayerController.sharedVideoPlayer.pausePlayeVideosFor(tableView: tableView, appEnteredFromBackground: true)
+    }
+
+    func pausePlayeVideos(){
+        ASVideoPlayerController.sharedVideoPlayer.pausePlayeVideosFor(tableView: tableView)
+    }
+    
     func setupTableView() {
         tableView.delegate = self
         tableView.dataSource = self
-        tableView?.registerReusableCell(FeedBoxTableViewCell.self)
+        tableView?.registerReusableCell(FeedContentTableViewCell.self)
     }
 }
 
@@ -61,14 +79,26 @@ extension FeedViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: FeedBoxTableViewCell = tableView.dequeueReusableCell(for: indexPath)
-        cell.setup(with: posts[indexPath.row])
-        return cell
+        if let content = posts[indexPath.row] as? IContentPost {
+            let cell: FeedContentTableViewCell = tableView.dequeueReusableCell(for: indexPath)
+            cell.setup(with: content, vc: self)
+            return cell
+        } else if let box = posts[indexPath.row] as? IBoxPost {
+            
+        } else {
+            
+        }
+        return UITableViewCell()
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }
     
+    func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if let videoCell = cell as? ASAutoPlayVideoLayerContainer, videoCell.videoURL != nil {
+            ASVideoPlayerController.sharedVideoPlayer.removeLayerFor(cell: videoCell)
+        }
+    }
     
 }

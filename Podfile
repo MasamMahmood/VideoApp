@@ -8,4 +8,6 @@ target 'videoApp' do
   # Pods for videoApp
   pod 'Alamofire', '4.9.0'
   pod 'Player', '~> 0.13.0'
+  pod 'SDWebImage', '~> 5.0'
+
 end

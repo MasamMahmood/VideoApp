@@ -9,7 +9,11 @@
 import Foundation
 
 class PostsService: BasicService, IPostsService {
-    
+    enum PostType: String {
+        case video
+        case ad
+        
+    }
     func getPosts(userId: String?,
                   startingId: String?,
                   afterId: String?,
@@ -20,7 +24,8 @@ class PostsService: BasicService, IPostsService {
         let params = ["userId": UUID().uuidString, "pageSize": pageSize] as [String : Any]
         
         let request = sessionManager.request(url, method: .get, parameters: params)
-        request.responseJSON { (response) in
+        request.responseJSON { [weak self] (response) in
+            guard let self = self else { return }
             switch response.result {
             case .success(let data):
                 guard let result = data as? [String: Any],
@@ -30,7 +35,9 @@ class PostsService: BasicService, IPostsService {
                 }
                 var posts:[IPost] = []
                 for post in obj {
-                    posts.append(Post(dic: post))
+                    if let post = self.parsePost(from: post) {
+                        posts.append(post)
+                    }
                 }
                 completion(posts)
             case .failure(_):
@@ -40,6 +47,18 @@ class PostsService: BasicService, IPostsService {
         request.resume()
     }
     
+    private func parsePost(from dic: [String: Any]) -> IPost? {
+        guard let type = dic["type"] as? String,
+        let value = PostType(rawValue: type) else { return nil }
+        let result: IPost?
+        switch value {
+        case .ad:
+            result = Post(dic: dic)
+        case .video:
+            result = ContentPost(dic: dic)
+        }
+        return result
+    }
     
 //    Posts endpoint:
 //    https://api.whatsviralapp.com/v2/posts

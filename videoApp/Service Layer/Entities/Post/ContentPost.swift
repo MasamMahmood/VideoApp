@@ -6,8 +6,6 @@
 //  Copyright © 2019 Olga Vorona. All rights reserved.
 //
 
-import Unbox
-
 class ContentPost: Post, IContentPost {
     var thumbnailUrl: String? = nil
     var postUrl: String = ""
@@ -18,7 +16,7 @@ class ContentPost: Post, IContentPost {
     
     required init(dic: [String : Any]) {
         if let postUrl = dic["postUrl"] as? String,
-            let commentsCount = dic["commentsCount"] as? Int,
+            let commentsCount = dic["comments"] as? Int,
             let views = dic["views"] as? Int,
             let likes = dic["likes"] as? Int,
             let shares = dic["shares"] as? Int {

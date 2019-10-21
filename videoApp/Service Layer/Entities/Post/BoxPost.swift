@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import Unbox
 
 class BoxPost: Post, IBoxPost {
     var thumbnailUrl: String = ""

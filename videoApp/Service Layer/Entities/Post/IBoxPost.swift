@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol IBoxPost {
+protocol IBoxPost: IPost {
     var thumbnailUrl: String { get }
     var animationUrl: String { get }
     var status: String { get }

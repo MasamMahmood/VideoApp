@@ -41,10 +41,13 @@
 		03CBD22A235B2561001E1FFD /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CBD221235B2561001E1FFD /* FeedViewController.swift */; };
 		03CBD22F235B2765001E1FFD /* FeedAdsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CBD22E235B2765001E1FFD /* FeedAdsTableViewCell.swift */; };
 		03CBD231235B277D001E1FFD /* FeedAdsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03CBD230235B277D001E1FFD /* FeedAdsTableViewCell.xib */; };
-		03CBD234235B2803001E1FFD /* FeedBoxTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CBD232235B2803001E1FFD /* FeedBoxTableViewCell.swift */; };
-		03CBD235235B2803001E1FFD /* FeedBoxTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03CBD233235B2803001E1FFD /* FeedBoxTableViewCell.xib */; };
-		03CBD237235B295E001E1FFD /* FeedContentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CBD236235B295E001E1FFD /* FeedContentTableViewCell.swift */; };
+		03CBD234235B2803001E1FFD /* FeedContentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CBD232235B2803001E1FFD /* FeedContentTableViewCell.swift */; };
+		03CBD235235B2803001E1FFD /* FeedContentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03CBD233235B2803001E1FFD /* FeedContentTableViewCell.xib */; };
+		03CBD237235B295E001E1FFD /* FeedBTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CBD236235B295E001E1FFD /* FeedBTableViewCell.swift */; };
 		03DC3D16235CA15D009EC246 /* TableViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DC3D15235CA15D009EC246 /* TableViewHelper.swift */; };
+		03DC3D1B235DE3DE009EC246 /* ASVideoLayerObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DC3D18235DE3DE009EC246 /* ASVideoLayerObject.swift */; };
+		03DC3D1C235DE3DE009EC246 /* ASVideoPlayerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DC3D19235DE3DE009EC246 /* ASVideoPlayerController.swift */; };
+		03DC3D1D235DE3DE009EC246 /* ASVideoContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DC3D1A235DE3DE009EC246 /* ASVideoContainer.swift */; };
 		FACA396843E4061581234D83 /* Pods_videoApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2468ED921B45B3F4DD66CD1D /* Pods_videoApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -85,10 +88,13 @@
 		03CBD221235B2561001E1FFD /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		03CBD22E235B2765001E1FFD /* FeedAdsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedAdsTableViewCell.swift; sourceTree = "<group>"; };
 		03CBD230235B277D001E1FFD /* FeedAdsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedAdsTableViewCell.xib; sourceTree = "<group>"; };
-		03CBD232235B2803001E1FFD /* FeedBoxTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedBoxTableViewCell.swift; sourceTree = "<group>"; };
-		03CBD233235B2803001E1FFD /* FeedBoxTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedBoxTableViewCell.xib; sourceTree = "<group>"; };
-		03CBD236235B295E001E1FFD /* FeedContentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedContentTableViewCell.swift; sourceTree = "<group>"; };
+		03CBD232235B2803001E1FFD /* FeedContentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedContentTableViewCell.swift; sourceTree = "<group>"; };
+		03CBD233235B2803001E1FFD /* FeedContentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedContentTableViewCell.xib; sourceTree = "<group>"; };
+		03CBD236235B295E001E1FFD /* FeedBTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedBTableViewCell.swift; sourceTree = "<group>"; };
 		03DC3D15235CA15D009EC246 /* TableViewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewHelper.swift; sourceTree = "<group>"; };
+		03DC3D18235DE3DE009EC246 /* ASVideoLayerObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ASVideoLayerObject.swift; sourceTree = "<group>"; };
+		03DC3D19235DE3DE009EC246 /* ASVideoPlayerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ASVideoPlayerController.swift; sourceTree = "<group>"; };
+		03DC3D1A235DE3DE009EC246 /* ASVideoContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ASVideoContainer.swift; sourceTree = "<group>"; };
 		2468ED921B45B3F4DD66CD1D /* Pods_videoApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_videoApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D54DE6D9D9D9E927B582868 /* Pods-videoApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-videoApp.debug.xcconfig"; path = "Target Support Files/Pods-videoApp/Pods-videoApp.debug.xcconfig"; sourceTree = "<group>"; };
 		BF1EAE35D74262E5AD5C7FC5 /* Pods-videoApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-videoApp.release.xcconfig"; path = "Target Support Files/Pods-videoApp/Pods-videoApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -127,6 +133,7 @@
 		0319065F2359D576001CA6CA /* videoApp */ = {
 			isa = PBXGroup;
 			children = (
+				03DC3D17235DE3DE009EC246 /* VideoPlayLibrary */,
 				031906752359D69E001CA6CA /* UI Layer */,
 				031906742359D690001CA6CA /* Service Layer */,
 				031906602359D576001CA6CA /* AppDelegate.swift */,
@@ -339,9 +346,9 @@
 			children = (
 				03CBD22E235B2765001E1FFD /* FeedAdsTableViewCell.swift */,
 				03CBD230235B277D001E1FFD /* FeedAdsTableViewCell.xib */,
-				03CBD232235B2803001E1FFD /* FeedBoxTableViewCell.swift */,
-				03CBD233235B2803001E1FFD /* FeedBoxTableViewCell.xib */,
-				03CBD236235B295E001E1FFD /* FeedContentTableViewCell.swift */,
+				03CBD232235B2803001E1FFD /* FeedContentTableViewCell.swift */,
+				03CBD233235B2803001E1FFD /* FeedContentTableViewCell.xib */,
+				03CBD236235B295E001E1FFD /* FeedBTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -352,6 +359,16 @@
 				03DC3D15235CA15D009EC246 /* TableViewHelper.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		03DC3D17235DE3DE009EC246 /* VideoPlayLibrary */ = {
+			isa = PBXGroup;
+			children = (
+				03DC3D18235DE3DE009EC246 /* ASVideoLayerObject.swift */,
+				03DC3D19235DE3DE009EC246 /* ASVideoPlayerController.swift */,
+				03DC3D1A235DE3DE009EC246 /* ASVideoContainer.swift */,
+			);
+			path = VideoPlayLibrary;
 			sourceTree = "<group>";
 		};
 		23191A8342AC8CEFE39B1796 /* Frameworks */ = {
@@ -435,7 +452,7 @@
 				0319066D2359D578001CA6CA /* LaunchScreen.storyboard in Resources */,
 				0319066A2359D578001CA6CA /* Assets.xcassets in Resources */,
 				031906682359D576001CA6CA /* Main.storyboard in Resources */,
-				03CBD235235B2803001E1FFD /* FeedBoxTableViewCell.xib in Resources */,
+				03CBD235235B2803001E1FFD /* FeedContentTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -499,6 +516,7 @@
 				03CBD20E235ACF2C001E1FFD /* IContentPost.swift in Sources */,
 				03CBD210235ACF46001E1FFD /* IBoxPost.swift in Sources */,
 				031906942359DA2B001CA6CA /* ICommentsService.swift in Sources */,
+				03DC3D1C235DE3DE009EC246 /* ASVideoPlayerController.swift in Sources */,
 				031906972359DA4F001CA6CA /* IViewsService.swift in Sources */,
 				031906882359D904001CA6CA /* LikesService.swift in Sources */,
 				031906822359D89E001CA6CA /* BoxesService.swift in Sources */,
@@ -506,9 +524,10 @@
 				03CBD229235B2561001E1FFD /* FeedViewProtocols.swift in Sources */,
 				03CBD22F235B2765001E1FFD /* FeedAdsTableViewCell.swift in Sources */,
 				0319068E2359D9D7001CA6CA /* IPostsService.swift in Sources */,
+				03DC3D1D235DE3DE009EC246 /* ASVideoContainer.swift in Sources */,
 				031906912359D9F9001CA6CA /* IBoxesService.swift in Sources */,
 				03CBD225235B2561001E1FFD /* FeedEntity.swift in Sources */,
-				03CBD237235B295E001E1FFD /* FeedContentTableViewCell.swift in Sources */,
+				03CBD237235B295E001E1FFD /* FeedBTableViewCell.swift in Sources */,
 				03CBD215235ACF78001E1FFD /* BoxPost.swift in Sources */,
 				03DC3D16235CA15D009EC246 /* TableViewHelper.swift in Sources */,
 				031906862359D8F3001CA6CA /* ViewsService.swift in Sources */,
@@ -518,8 +537,9 @@
 				031906842359D8CF001CA6CA /* CommentsService.swift in Sources */,
 				03CBD20A235ACA15001E1FFD /* AdPost.swift in Sources */,
 				03CBD208235AC210001E1FFD /* VideoSessionManager.swift in Sources */,
-				03CBD234235B2803001E1FFD /* FeedBoxTableViewCell.swift in Sources */,
+				03CBD234235B2803001E1FFD /* FeedContentTableViewCell.swift in Sources */,
 				0319068A2359D91E001CA6CA /* SharesService.swift in Sources */,
+				03DC3D1B235DE3DE009EC246 /* ASVideoLayerObject.swift in Sources */,
 				03CBD226235B2561001E1FFD /* FeedAssembly.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
