@@ -15,17 +15,13 @@ class ContentPost: Post, IContentPost {
     var shares: Int = 0
     
     required init(dic: [String : Any]) {
-        if let postUrl = dic["postUrl"] as? String,
-            let commentsCount = dic["comments"] as? Int,
-            let views = dic["views"] as? Int,
-            let likes = dic["likes"] as? Int,
-            let shares = dic["shares"] as? Int {
+        if let postUrl = dic["postUrl"] as? String {
             self.postUrl = postUrl
-            self.commentsCount = commentsCount
-            self.views = views
-            self.likes = likes
-            self.shares = shares
+            self.commentsCount = dic["comments"] as? Int ?? 0
+            self.views = dic["views"] as? Int ?? 0
+            self.likes = dic["likes"] as? Int ?? 0
             self.thumbnailUrl = dic["thumbnailUrl"] as? String
+            self.shares = dic["shares"] as? Int ?? 0
         }
         super.init(dic: dic)
     }

@@ -33,15 +33,15 @@ class FeedViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        pausePlayeVideos()
+        pausePlayVideos()
     }
     
     @objc func appEnteredFromBackground() {
-        ASVideoPlayerController.sharedVideoPlayer.pausePlayeVideosFor(tableView: tableView, appEnteredFromBackground: true)
+        ASVideoPlayerController.sharedVideoPlayer.pausePlayVideosFor(tableView: tableView, appEnteredFromBackground: true)
     }
 
-    func pausePlayeVideos(){
-        ASVideoPlayerController.sharedVideoPlayer.pausePlayeVideosFor(tableView: tableView)
+    func pausePlayVideos(){
+        ASVideoPlayerController.sharedVideoPlayer.pausePlayVideosFor(tableView: tableView)
     }
     
     func setupTableView() {
@@ -101,4 +101,13 @@ extension FeedViewController: UITableViewDelegate, UITableViewDataSource {
         }
     }
     
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        pausePlayVideos()
+    }
+    
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        if !decelerate {
+            pausePlayVideos()
+        }
+    }
 }

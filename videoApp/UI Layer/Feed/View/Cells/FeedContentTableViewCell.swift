@@ -12,6 +12,8 @@ import AVFoundation
 
 class FeedContentTableViewCell: UITableViewCell, ICollectionCellFromNib, ASAutoPlayVideoLayerContainer {
    
+    //MARK: - ASAutoPlayVideoLayerContainer
+
     var videoLayer: AVPlayerLayer = AVPlayerLayer()
         
     var videoURL: String? {
@@ -33,6 +35,8 @@ class FeedContentTableViewCell: UITableViewCell, ICollectionCellFromNib, ASAutoP
         return visibleVideoFrame.size.height
     }
     
+    //MARK: - ICollectionCellFromNib
+
     static var reuseIdentifier: String = "FeedContentTableViewCell"
     
     @IBOutlet weak var videoContainer: UIView!
@@ -41,11 +45,14 @@ class FeedContentTableViewCell: UITableViewCell, ICollectionCellFromNib, ASAutoP
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var videoHeightConstraint: NSLayoutConstraint!
 
+    //MARK: - Cell
+
     override func awakeFromNib() {
         super.awakeFromNib()
         videoLayer.backgroundColor = UIColor.clear.cgColor
         videoLayer.videoGravity = AVLayerVideoGravity.resize
         selectionStyle = .none
+        mockImage.layer.addSublayer(videoLayer)
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -59,15 +66,20 @@ class FeedContentTableViewCell: UITableViewCell, ICollectionCellFromNib, ASAutoP
     }
     
     func setup(with post: IContentPost, vc: UIViewController) {
+        videoURL = post.postUrl
         titleLabel.text = post.title
         mockImage.sd_setImage(with: URL(string: post.thumbnailUrl ?? ""), completed: nil)
         videoHeightConstraint.constant = countHeight(width: post.width, height: post.height)
-        setNeedsLayout()
-        layoutIfNeeded()
+        layoutSubviews()
     }
     
     func countHeight(width: Int, height: Int) -> CGFloat {
-        let imageProportion = videoContainer.frame.size.width / CGFloat(width)
+        let imageProportion = videoContainer.frame.width / CGFloat(width)
         return CGFloat(height) * imageProportion
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        videoLayer.frame = CGRect(x: 0, y: 0, width: superview?.frame.width ?? 0, height: videoHeightConstraint.constant)
     }
 }
