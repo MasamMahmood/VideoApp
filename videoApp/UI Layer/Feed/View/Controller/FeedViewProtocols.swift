@@ -12,8 +12,9 @@ protocol FeedViewInput: class {
     var currentController: UIViewController { get }
     var rootNavigationController: UINavigationController? { get }
     var output: FeedViewOutput? { get set }
+    func feedRecieved(posts: [IPost], indexPathToReload: [IndexPath]?)
 }
 
 protocol FeedViewOutput: class {
-    func feedRequested(completion: @escaping(([IPost] )-> Void))
+    func feedRequested()
 }

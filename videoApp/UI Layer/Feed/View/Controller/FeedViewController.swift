@@ -14,7 +14,8 @@ class FeedViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     private var viewOutput: FeedViewOutput?
     private var posts: [IPost] = []
-    
+    private let refreshControl = UIRefreshControl()
+
     override func viewDidLoad() {
         let presenter = FeedPresentationModel(view: self, service: ServiceProvider.instance.postService)
         self.output = presenter
@@ -24,11 +25,7 @@ class FeedViewController: UIViewController {
                                                name: UIApplication.didEnterBackgroundNotification,
                                                object: nil)
 
-        viewOutput?.feedRequested(completion: { [weak self] posts in
-            guard let self = self else { return }
-            self.posts = posts
-            self.tableView.reloadData()
-        })
+        viewOutput?.feedRequested()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -47,7 +44,13 @@ class FeedViewController: UIViewController {
     func setupTableView() {
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.prefetchDataSource = self
         tableView?.registerReusableCell(FeedContentTableViewCell.self)
+        if #available(iOS 10.0, *) {
+            tableView.refreshControl = refreshControl
+        } else {
+            tableView.addSubview(refreshControl)
+        }
     }
 }
 
@@ -70,10 +73,22 @@ extension FeedViewController: FeedViewInput {
             viewOutput = newValue
         }
     }
+    
+    func feedRecieved(posts: [IPost], indexPathToReload: [IndexPath]?) {
+        self.posts = posts
+        if let paths = indexPathToReload {
+            let indexPathsToReload = visibleIndexPathsToReload(intersecting: paths)
+            tableView.beginUpdates()
+            tableView.insertRows(at: paths, with: .automatic)
+            tableView.endUpdates()
+        } else {
+            tableView.reloadData()
+        }
+    }
 
 }
 
-extension FeedViewController: UITableViewDelegate, UITableViewDataSource {
+extension FeedViewController: UITableViewDelegate, UITableViewDataSource, UITableViewDataSourcePrefetching {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
        return posts.count
     }
@@ -101,6 +116,16 @@ extension FeedViewController: UITableViewDelegate, UITableViewDataSource {
         }
     }
     
+    func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
+        if indexPaths.contains(where: isLoadingCell) {
+            viewOutput?.feedRequested()
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, cancelPrefetchingForRowsAt indexPaths: [IndexPath]) {
+        
+    }
+    
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         pausePlayVideos()
     }
@@ -110,4 +135,16 @@ extension FeedViewController: UITableViewDelegate, UITableViewDataSource {
             pausePlayVideos()
         }
     }
+}
+
+private extension FeedViewController {
+  func isLoadingCell(for indexPath: IndexPath) -> Bool {
+    return indexPath.row >= (posts.count - 2)
+  }
+
+  func visibleIndexPathsToReload(intersecting indexPaths: [IndexPath]) -> [IndexPath] {
+    let indexPathsForVisibleRows = tableView.indexPathsForVisibleRows ?? []
+    let indexPathsIntersection = Set(indexPathsForVisibleRows).intersection(indexPaths)
+    return Array(indexPathsIntersection)
+  }
 }

@@ -13,5 +13,5 @@ protocol IPostsService {
                   startingId: String?,
                   afterId: String?,
                   pageSize: String,
-                  completion:@escaping (([IPost]) -> Void))
+                  completion:@escaping (([IPost]?) -> Void))
 }

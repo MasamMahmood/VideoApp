@@ -18,11 +18,16 @@ class PostsService: BasicService, IPostsService {
                   startingId: String?,
                   afterId: String?,
                   pageSize: String,
-                  completion:@escaping (([IPost]) -> Void)) {
+                  completion:@escaping (([IPost]?) -> Void)) {
         let urlString = basicURL + Endpoints.posts.rawValue
         let url: URL! = URL(string: urlString)
-        let params = ["userId": UUID().uuidString, "pageSize": pageSize] as [String : Any]
-        
+        var params = ["userId": UUID().uuidString, "pageSize": pageSize] as [String : Any]
+        if let afterId = afterId {
+            params["afterPostId"] = afterId
+        }
+        if let startingId = startingId {
+            params["startingPostId"] = startingId
+        }
         let request = sessionManager.request(url, method: .get, parameters: params)
         request.responseJSON { [weak self] (response) in
             guard let self = self else { return }
