@@ -24,7 +24,7 @@ class FeedContentTableViewCell: UITableViewCell, ICollectionCellFromNib, ASAutoP
     }
     
     func visibleVideoHeight() -> CGFloat {
-        let videoFrameInParentSuperView: CGRect? = self.superview?.superview?.convert(videoContainer.frame, from: shotImageView)
+        let videoFrameInParentSuperView: CGRect? = self.superview?.superview?.convert(videoContainer.frame, from: videoContainer)
         guard let videoFrame = videoFrameInParentSuperView,
             let superViewFrame = superview?.frame else {
              return 0
