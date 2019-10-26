@@ -15,12 +15,12 @@ enum ActionType {
     case shares
 }
 
-class ActionView {
-    private let image: UIImageView = UIImageView()
-    private let label: UILabel = UILabel()
+class ActionView: UIView {
+    @IBOutlet weak var image: UIImageView!
+    @IBOutlet weak var label: UILabel!
     
     func setup(type: ActionType, text: String) {
-        
+        label.text = text
     }
     
 }

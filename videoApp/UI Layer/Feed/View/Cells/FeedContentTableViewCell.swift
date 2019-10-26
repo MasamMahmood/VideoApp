@@ -10,7 +10,7 @@ import UIKit
 import SDWebImage
 import AVFoundation
 
-class FeedContentTableViewCell: UITableViewCell, ICollectionCellFromNib, ASAutoPlayVideoLayerContainer {
+final class FeedContentTableViewCell: UITableViewCell, ICollectionCellFromNib, ASAutoPlayVideoLayerContainer {
    
     //MARK: - ASAutoPlayVideoLayerContainer
 
@@ -47,6 +47,12 @@ class FeedContentTableViewCell: UITableViewCell, ICollectionCellFromNib, ASAutoP
 
     //MARK: - Cell
 
+    override func prepareForReuse() {
+        for subview in actionsContainer.arrangedSubviews {
+            actionsContainer.removeArrangedSubview(subview)
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         videoLayer.backgroundColor = UIColor.clear.cgColor
@@ -55,14 +61,9 @@ class FeedContentTableViewCell: UITableViewCell, ICollectionCellFromNib, ASAutoP
         mockImage.layer.addSublayer(videoLayer)
     }
     
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-    
-    private func setupPlayer() {
-
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        videoLayer.frame = CGRect(x: 0, y: 0, width: superview?.frame.width ?? 0, height: videoHeightConstraint.constant)
     }
     
     func setup(with post: IContentPost, vc: UIViewController) {
@@ -71,15 +72,30 @@ class FeedContentTableViewCell: UITableViewCell, ICollectionCellFromNib, ASAutoP
         mockImage.sd_setImage(with: URL(string: post.thumbnailUrl ?? ""), completed: nil)
         videoHeightConstraint.constant = countHeight(width: post.width, height: post.height)
         layoutSubviews()
+        setupActions(post: post)
     }
     
-    func countHeight(width: Int, height: Int) -> CGFloat {
+    private func countHeight(width: Int, height: Int) -> CGFloat {
         let imageProportion = videoContainer.frame.width / CGFloat(width)
         return CGFloat(height) * imageProportion
     }
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        videoLayer.frame = CGRect(x: 0, y: 0, width: superview?.frame.width ?? 0, height: videoHeightConstraint.constant)
+    private func setupActions(post: IContentPost) {
+        let views: ActionView = ActionView.loadFromXib()
+        views.setup(type: .views, text: "\(post.views)")
+        actionsContainer.addArrangedSubview(views)
+        
+        let likes: ActionView = ActionView.loadFromXib()
+        likes.setup(type: .likes, text: "\(post.likes)")
+        actionsContainer.addArrangedSubview(likes)
+        
+        let comments: ActionView = ActionView.loadFromXib()
+        comments.setup(type: .comments, text: "\(post.commentsCount)")
+        actionsContainer.addArrangedSubview(comments)
+        
+        let shares: ActionView = ActionView.loadFromXib()
+        shares.setup(type: .shares, text: "\(post.shares)")
+        actionsContainer.addArrangedSubview(shares)
+
     }
 }
