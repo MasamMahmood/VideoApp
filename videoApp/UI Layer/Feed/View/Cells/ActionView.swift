@@ -8,7 +8,7 @@
 
 import UIKit
 
-enum ActionType {
+enum ActionType: String {
     case comments
     case views
     case likes
@@ -21,6 +21,7 @@ class ActionView: UIView {
     
     func setup(type: ActionType, text: String) {
         label.text = text
+        image.image = UIImage(named: type.rawValue)
     }
     
 }
