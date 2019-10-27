@@ -37,20 +37,26 @@ class FeedViewController: UIViewController {
         ASVideoPlayerController.sharedVideoPlayer.pausePlayVideosFor(tableView: tableView, appEnteredFromBackground: true)
     }
 
-    func pausePlayVideos(){
+    private func pausePlayVideos(){
         ASVideoPlayerController.sharedVideoPlayer.pausePlayVideosFor(tableView: tableView)
     }
     
-    func setupTableView() {
+    private func setupTableView() {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.prefetchDataSource = self
         tableView?.registerReusableCell(FeedContentTableViewCell.self)
+        tableView?.registerReusableCell(FeedBTableViewCell.self)
+        refreshControl.addTarget(self, action: #selector(refreshPosts(_:)), for: .valueChanged)
         if #available(iOS 10.0, *) {
             tableView.refreshControl = refreshControl
         } else {
             tableView.addSubview(refreshControl)
         }
+    }
+    
+    @objc private func refreshPosts(_ sender: Any) {
+        viewOutput?.refreshRequested()
     }
 }
 
@@ -77,7 +83,6 @@ extension FeedViewController: FeedViewInput {
     func feedRecieved(posts: [IPost], indexPathToReload: [IndexPath]?) {
         self.posts = posts
         if let paths = indexPathToReload {
-            let indexPathsToReload = visibleIndexPathsToReload(intersecting: paths)
             tableView.beginUpdates()
             tableView.insertRows(at: paths, with: .automatic)
             tableView.endUpdates()
@@ -96,10 +101,12 @@ extension FeedViewController: UITableViewDelegate, UITableViewDataSource, UITabl
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let content = posts[indexPath.row] as? IContentPost {
             let cell: FeedContentTableViewCell = tableView.dequeueReusableCell(for: indexPath)
-            cell.setup(with: content, vc: self)
+            cell.setup(with: content)
             return cell
         } else if let box = posts[indexPath.row] as? IBoxPost {
-            
+            let cell: FeedBTableViewCell = tableView.dequeueReusableCell(for: indexPath)
+            cell.setup(with: box)
+            return cell
         } else {
             
         }
@@ -123,7 +130,7 @@ extension FeedViewController: UITableViewDelegate, UITableViewDataSource, UITabl
     }
     
     func tableView(_ tableView: UITableView, cancelPrefetchingForRowsAt indexPaths: [IndexPath]) {
-        
+
     }
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
@@ -140,11 +147,5 @@ extension FeedViewController: UITableViewDelegate, UITableViewDataSource, UITabl
 private extension FeedViewController {
   func isLoadingCell(for indexPath: IndexPath) -> Bool {
     return indexPath.row >= (posts.count - 2)
-  }
-
-  func visibleIndexPathsToReload(intersecting indexPaths: [IndexPath]) -> [IndexPath] {
-    let indexPathsForVisibleRows = tableView.indexPathsForVisibleRows ?? []
-    let indexPathsIntersection = Set(indexPathsForVisibleRows).intersection(indexPaths)
-    return Array(indexPathsIntersection)
   }
 }

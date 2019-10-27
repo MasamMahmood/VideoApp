@@ -7,13 +7,17 @@
 //
 
 import Foundation
+import Alamofire
 
 class PostsService: BasicService, IPostsService {
+   
     enum PostType: String {
         case video
         case ad
         
     }
+    private weak var getRequest: DataRequest? = nil
+    
     func getPosts(userId: String?,
                   startingId: String?,
                   afterId: String?,
@@ -50,6 +54,11 @@ class PostsService: BasicService, IPostsService {
             }
         }
         request.resume()
+        getRequest = request
+    }
+    
+    func cancelGet() {
+        getRequest?.cancel()
     }
     
     private func parsePost(from dic: [String: Any]) -> IPost? {

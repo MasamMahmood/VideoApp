@@ -22,11 +22,24 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QUz-gI-Y9s">
                                 <rect key="frame" x="0.0" y="0.0" width="340" height="226"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U7k-74-XEx">
+                                <rect key="frame" x="284" y="170" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="7Zu-JP-OWd"/>
+                                    <constraint firstAttribute="height" constant="40" id="OiT-EM-cZV"/>
+                                </constraints>
+                                <state key="normal" title="off"/>
+                                <connections>
+                                    <action selector="soundButtonPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="6Pa-ld-WuZ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="U7k-74-XEx" secondAttribute="trailing" constant="16" id="0R5-ay-ZMr"/>
                             <constraint firstItem="QUz-gI-Y9s" firstAttribute="top" secondItem="rDf-u9-aSL" secondAttribute="top" id="148-UT-kIB"/>
                             <constraint firstAttribute="height" constant="226" id="KmB-nP-TTi"/>
+                            <constraint firstAttribute="bottom" secondItem="U7k-74-XEx" secondAttribute="bottom" constant="16" id="LBx-zu-5Qs"/>
                             <constraint firstItem="QUz-gI-Y9s" firstAttribute="leading" secondItem="rDf-u9-aSL" secondAttribute="leading" id="QEX-yS-Jzz"/>
                             <constraint firstAttribute="bottom" secondItem="QUz-gI-Y9s" secondAttribute="bottom" id="ZPa-U6-LGU"/>
                             <constraint firstAttribute="trailing" secondItem="QUz-gI-Y9s" secondAttribute="trailing" id="t00-o3-lOv"/>

@@ -66,7 +66,7 @@ final class FeedContentTableViewCell: UITableViewCell, ICollectionCellFromNib, A
         videoLayer.frame = CGRect(x: 0, y: 0, width: superview?.frame.width ?? 0, height: videoHeightConstraint.constant)
     }
     
-    func setup(with post: IContentPost, vc: UIViewController) {
+    func setup(with post: IContentPost) {
         videoURL = post.postUrl
         titleLabel.text = post.title
         mockImage.sd_setImage(with: URL(string: post.thumbnailUrl ?? ""), completed: nil)
@@ -74,9 +74,13 @@ final class FeedContentTableViewCell: UITableViewCell, ICollectionCellFromNib, A
         layoutSubviews()
         setupActions(post: post)
     }
+      
+    @IBAction func soundButtonPressed(_ sender: Any) {
     
+    }
+      
     private func countHeight(width: Int, height: Int) -> CGFloat {
-        let imageProportion = videoContainer.frame.width / CGFloat(width)
+          let imageProportion = videoContainer.frame.width / CGFloat(width)
         return CGFloat(height) * imageProportion
     }
     

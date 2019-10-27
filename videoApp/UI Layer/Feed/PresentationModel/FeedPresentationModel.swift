@@ -13,6 +13,8 @@ class FeedPresentationModel: FeedPresentationModelInterface {
     var view: FeedViewInput
     var service: IPostsService
     private var loadInProgress: Bool = false
+    private var pullInProgress: Bool = false
+
     private var lastId: String? = nil
     private let pageSize = 20
     private var posts: [IPost] = []
@@ -26,7 +28,7 @@ class FeedPresentationModel: FeedPresentationModelInterface {
         let endIndex = startIndex + newPosts.count
         return (startIndex..<endIndex).map { IndexPath(row: $0, section: 0) }
     }
-    private func newPostsRecieved(new: [IPost]) {
+    private func bottomPostsRecieved(new: [IPost]) {
         posts.append(contentsOf: new)
         var indexes: [IndexPath]? = nil
         if posts.count != new.count {
@@ -34,20 +36,40 @@ class FeedPresentationModel: FeedPresentationModelInterface {
         }
         view.feedRecieved(posts: posts, indexPathToReload: indexes)
     }
-}
+    
+    private func topPostsRecieved(new: [IPost]) {
+        posts = new
+        view.feedRecieved(posts: posts, indexPathToReload: nil)
+    }}
 
 // MARK: - FeedViewOutput Implementation
 
 extension FeedPresentationModel: FeedViewOutput {
     func feedRequested() {
-        guard !loadInProgress else { return }
+        guard !loadInProgress, !pullInProgress else { return }
         loadInProgress = true
         service.getPosts(userId: nil, startingId: nil, afterId: lastId, pageSize: "\(pageSize)") {[weak self] (newPosts) in
             self?.loadInProgress = false
             if let newPosts = newPosts {
                 self?.lastId = newPosts.last?.id
                 DispatchQueue.main.async { [weak self] in 
-                    self?.newPostsRecieved(new: newPosts)
+                    self?.bottomPostsRecieved(new: newPosts)
+                }
+            }
+        }
+    }
+    
+    func refreshRequested() {
+        if loadInProgress {
+            service.cancelGet()
+            loadInProgress = false
+        }
+        service.getPosts(userId: nil, startingId: nil, afterId: nil, pageSize: "\(pageSize)") {[weak self] (newPosts) in
+            self?.loadInProgress = false
+            if let newPosts = newPosts {
+                self?.lastId = newPosts.last?.id
+                DispatchQueue.main.async { [weak self] in
+                    self?.topPostsRecieved(new: newPosts)
                 }
             }
         }

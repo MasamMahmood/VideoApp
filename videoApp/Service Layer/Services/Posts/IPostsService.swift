@@ -14,4 +14,5 @@ protocol IPostsService {
                   afterId: String?,
                   pageSize: String,
                   completion:@escaping (([IPost]?) -> Void))
+    func cancelGet()
 }

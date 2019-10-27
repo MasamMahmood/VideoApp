@@ -17,4 +17,5 @@ protocol FeedViewInput: class {
 
 protocol FeedViewOutput: class {
     func feedRequested()
+    func refreshRequested()
 }
