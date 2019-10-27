@@ -9,8 +9,6 @@
 import UIKit
 
 protocol FeedViewInput: class {
-    var currentController: UIViewController { get }
-    var rootNavigationController: UINavigationController? { get }
     var output: FeedViewOutput? { get set }
     func feedRecieved(posts: [IPost], indexPathToReload: [IndexPath]?)
 }
@@ -18,4 +16,7 @@ protocol FeedViewInput: class {
 protocol FeedViewOutput: class {
     func feedRequested()
     func refreshRequested()
+    func postLiked(postId: String)
+    func postShared(postId: String)
+    func postViewed(postId: String)
 }

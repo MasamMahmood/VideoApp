@@ -17,7 +17,8 @@ class FeedViewController: UIViewController {
     private let refreshControl = UIRefreshControl()
 
     override func viewDidLoad() {
-        let presenter = FeedPresentationModel(view: self, service: ServiceProvider.instance.postService)
+        let presenter = FeedPresentationModel(view: self,
+                                              service: ServiceProvider.instance.postService)
         self.output = presenter
         setupTableView()
         NotificationCenter.default.addObserver(self,
@@ -46,7 +47,7 @@ class FeedViewController: UIViewController {
         tableView.dataSource = self
         tableView.prefetchDataSource = self
         tableView?.registerReusableCell(FeedContentTableViewCell.self)
-        tableView?.registerReusableCell(FeedBTableViewCell.self)
+        tableView?.registerReusableCell(FeedBoxTableViewCell.self)
         refreshControl.addTarget(self, action: #selector(refreshPosts(_:)), for: .valueChanged)
         if #available(iOS 10.0, *) {
             tableView.refreshControl = refreshControl
@@ -106,7 +107,7 @@ extension FeedViewController: UITableViewDelegate, UITableViewDataSource, UITabl
             cell.setup(with: content)
             return cell
         } else if let box = posts[indexPath.row] as? IBoxPost {
-            let cell: FeedBTableViewCell = tableView.dequeueReusableCell(for: indexPath)
+            let cell: FeedBoxTableViewCell = tableView.dequeueReusableCell(for: indexPath)
             cell.setup(with: box)
             return cell
         } else {
@@ -149,7 +150,7 @@ extension FeedViewController: UITableViewDelegate, UITableViewDataSource, UITabl
 extension FeedViewController: FeedContentCellDelegate {
    
     func likePressed() {
-        
+        viewOutput?.postLiked(postId:"")
     }
     
     func commentPressed() {

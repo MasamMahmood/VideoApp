@@ -9,10 +9,12 @@
 import Foundation
 
 protocol IPostsService {
-    func getPosts(userId: String?,
+    func getPosts(userId: String,
                   startingId: String?,
                   afterId: String?,
                   pageSize: String,
                   completion:@escaping (([IPost]?) -> Void))
     func cancelGet()
+    func likePost(userId: String, postId: String)
+
 }

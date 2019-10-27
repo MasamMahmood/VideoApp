@@ -13,7 +13,8 @@ import UIKit
 class FeedAssembly {
     func buildModule() -> FeedViewController {
         let view = FeedViewController()
-        let presenter = FeedPresentationModel(view: view, service: ServiceProvider.instance.postService)
+        let presenter = FeedPresentationModel(view: view,
+                                              service: ServiceProvider.instance.postService)
         view.output = presenter
         return view
     }

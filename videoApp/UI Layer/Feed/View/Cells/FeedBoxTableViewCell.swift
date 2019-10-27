@@ -8,8 +8,8 @@
 
 import UIKit
 
-class FeedBTableViewCell: UITableViewCell, ICollectionCellFromNib {
-    static var reuseIdentifier: String = "FeedBTableViewCell"
+class FeedBoxTableViewCell: UITableViewCell, ICollectionCellFromNib {
+    static var reuseIdentifier: String = "FeedBoxTableViewCell"
     
     func setup(with post: IBoxPost) {
     }

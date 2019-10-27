@@ -9,16 +9,20 @@
 // MARK: - Stored Properties
 import Foundation
 
-class FeedPresentationModel: FeedPresentationModelInterface {
-    var view: FeedViewInput
-    var service: IPostsService
+final class FeedPresentationModel: FeedPresentationModelInterface {
+   
+    internal var view: FeedViewInput
+    internal var service: IPostsService
+
     private var loadInProgress: Bool = false
     private var pullInProgress: Bool = false
 
     private var lastId: String? = nil
     private let pageSize = 20
     private var posts: [IPost] = []
-    init(view: FeedViewInput, service: IPostsService) {
+    
+    init(view: FeedViewInput,
+         service: IPostsService) {
         self.view = view
         self.service = service
     }
@@ -28,6 +32,7 @@ class FeedPresentationModel: FeedPresentationModelInterface {
         let endIndex = startIndex + newPosts.count
         return (startIndex..<endIndex).map { IndexPath(row: $0, section: 0) }
     }
+    
     private func bottomPostsRecieved(new: [IPost]) {
         posts.append(contentsOf: new)
         var indexes: [IndexPath]? = nil
@@ -48,7 +53,7 @@ extension FeedPresentationModel: FeedViewOutput {
     func feedRequested() {
         guard !loadInProgress, !pullInProgress else { return }
         loadInProgress = true
-        service.getPosts(userId: nil, startingId: nil, afterId: lastId, pageSize: "\(pageSize)") {[weak self] (newPosts) in
+        service.getPosts(userId: "niltest", startingId: nil, afterId: lastId, pageSize: "\(pageSize)") {[weak self] (newPosts) in
             self?.loadInProgress = false
             if let newPosts = newPosts {
                 self?.lastId = newPosts.last?.id
@@ -64,7 +69,8 @@ extension FeedPresentationModel: FeedViewOutput {
             service.cancelGet()
             loadInProgress = false
         }
-        service.getPosts(userId: nil, startingId: nil, afterId: nil, pageSize: "\(pageSize)") {[weak self] (newPosts) in
+        
+        service.getPosts(userId: "niltest", startingId: nil, afterId: nil, pageSize: "\(pageSize)") {[weak self] (newPosts) in
             self?.loadInProgress = false
             if let newPosts = newPosts {
                 self?.lastId = newPosts.last?.id
@@ -73,6 +79,18 @@ extension FeedPresentationModel: FeedViewOutput {
                 }
             }
         }
+    }
+    
+    func postLiked(postId: String) {
+        service.likePost(userId: "niltest", postId: lastId!)
+    }
+    
+    func postShared(postId: String) {
+        
+    }
+    
+    func postViewed(postId: String) {
+        
     }
 
 }

@@ -27,16 +27,26 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zoG-qC-9vT">
+                    <rect key="frame" x="0.0" y="0.0" width="455" height="36"/>
+                    <connections>
+                        <action selector="actionSelected:" destination="iN0-l3-epB" eventType="touchUpInside" id="0Kv-UA-yf8"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="FQr-5O-q5V" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="7hs-Kv-KId"/>
                 <constraint firstItem="FQr-5O-q5V" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="F7I-7e-fRY"/>
+                <constraint firstItem="zoG-qC-9vT" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="Gy4-2d-Z1D"/>
                 <constraint firstAttribute="bottom" secondItem="K0r-0z-dxx" secondAttribute="bottom" constant="8" id="HDl-sO-lxS"/>
                 <constraint firstItem="K0r-0z-dxx" firstAttribute="leading" secondItem="FQr-5O-q5V" secondAttribute="trailing" constant="8" id="RWt-2z-hw4"/>
                 <constraint firstItem="K0r-0z-dxx" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="Tbv-MS-ZQe"/>
                 <constraint firstAttribute="bottom" secondItem="FQr-5O-q5V" secondAttribute="bottom" constant="8" id="V9f-gw-WGU"/>
+                <constraint firstItem="zoG-qC-9vT" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="c72-cw-e6g"/>
                 <constraint firstAttribute="trailing" secondItem="K0r-0z-dxx" secondAttribute="trailing" constant="8" id="fd2-ds-2rl"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="zoG-qC-9vT" secondAttribute="trailing" id="uDl-gN-nov"/>
+                <constraint firstAttribute="bottom" secondItem="zoG-qC-9vT" secondAttribute="bottom" id="x8p-F3-f3z"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
@@ -44,7 +54,7 @@
                 <outlet property="image" destination="FQr-5O-q5V" id="C2f-jH-xrK"/>
                 <outlet property="label" destination="K0r-0z-dxx" id="D2g-Hl-nGx"/>
             </connections>
-            <point key="canvasLocation" x="167.39130434782609" y="-65.290178571428569"/>
+            <point key="canvasLocation" x="167.39130434782609" y="-65.625"/>
         </view>
     </objects>
 </document>

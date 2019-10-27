@@ -16,17 +16,15 @@
 		031906802359D890001CA6CA /* PostsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0319067F2359D890001CA6CA /* PostsService.swift */; };
 		031906822359D89E001CA6CA /* BoxesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031906812359D89E001CA6CA /* BoxesService.swift */; };
 		031906842359D8CF001CA6CA /* CommentsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031906832359D8CF001CA6CA /* CommentsService.swift */; };
-		031906862359D8F3001CA6CA /* ViewsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031906852359D8F3001CA6CA /* ViewsService.swift */; };
-		031906882359D904001CA6CA /* LikesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031906872359D904001CA6CA /* LikesService.swift */; };
 		0319068A2359D91E001CA6CA /* SharesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031906892359D91E001CA6CA /* SharesService.swift */; };
 		0319068C2359D9AD001CA6CA /* BasicService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0319068B2359D9AD001CA6CA /* BasicService.swift */; };
 		0319068E2359D9D7001CA6CA /* IPostsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0319068D2359D9D7001CA6CA /* IPostsService.swift */; };
 		031906912359D9F9001CA6CA /* IBoxesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031906902359D9F9001CA6CA /* IBoxesService.swift */; };
 		031906942359DA2B001CA6CA /* ICommentsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031906932359DA2B001CA6CA /* ICommentsService.swift */; };
-		031906972359DA4F001CA6CA /* IViewsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031906962359DA4F001CA6CA /* IViewsService.swift */; };
-		0319069A2359DA82001CA6CA /* ILikesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031906992359DA82001CA6CA /* ILikesService.swift */; };
 		0319069D2359DA9E001CA6CA /* ISharesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0319069C2359DA9E001CA6CA /* ISharesService.swift */; };
 		03225D5A2365AC6E00025B29 /* Closures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03225D592365AC6E00025B29 /* Closures.swift */; };
+		03225D5C2365ED6E00025B29 /* DataRequest+Logs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03225D5B2365ED6E00025B29 /* DataRequest+Logs.swift */; };
+		03225D602365F45400025B29 /* FeedBoxTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03225D5F2365F45400025B29 /* FeedBoxTableViewCell.xib */; };
 		034BA07E23641D5C009B06FA /* ActionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034BA07D23641D5C009B06FA /* ActionView.swift */; };
 		034BA08023642F14009B06FA /* ActionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 034BA07F23642F14009B06FA /* ActionView.xib */; };
 		034BA082236435D1009B06FA /* ViewFromNib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034BA081236435D1009B06FA /* ViewFromNib.swift */; };
@@ -47,7 +45,7 @@
 		03CBD231235B277D001E1FFD /* FeedAdsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03CBD230235B277D001E1FFD /* FeedAdsTableViewCell.xib */; };
 		03CBD234235B2803001E1FFD /* FeedContentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CBD232235B2803001E1FFD /* FeedContentTableViewCell.swift */; };
 		03CBD235235B2803001E1FFD /* FeedContentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03CBD233235B2803001E1FFD /* FeedContentTableViewCell.xib */; };
-		03CBD237235B295E001E1FFD /* FeedBTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CBD236235B295E001E1FFD /* FeedBTableViewCell.swift */; };
+		03CBD237235B295E001E1FFD /* FeedBoxTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CBD236235B295E001E1FFD /* FeedBoxTableViewCell.swift */; };
 		03DC3D16235CA15D009EC246 /* TableViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DC3D15235CA15D009EC246 /* TableViewHelper.swift */; };
 		03DC3D1B235DE3DE009EC246 /* ASVideoLayerObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DC3D18235DE3DE009EC246 /* ASVideoLayerObject.swift */; };
 		03DC3D1C235DE3DE009EC246 /* ASVideoPlayerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DC3D19235DE3DE009EC246 /* ASVideoPlayerController.swift */; };
@@ -67,17 +65,15 @@
 		0319067F2359D890001CA6CA /* PostsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsService.swift; sourceTree = "<group>"; };
 		031906812359D89E001CA6CA /* BoxesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxesService.swift; sourceTree = "<group>"; };
 		031906832359D8CF001CA6CA /* CommentsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsService.swift; sourceTree = "<group>"; };
-		031906852359D8F3001CA6CA /* ViewsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewsService.swift; sourceTree = "<group>"; };
-		031906872359D904001CA6CA /* LikesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikesService.swift; sourceTree = "<group>"; };
 		031906892359D91E001CA6CA /* SharesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharesService.swift; sourceTree = "<group>"; };
 		0319068B2359D9AD001CA6CA /* BasicService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicService.swift; sourceTree = "<group>"; };
 		0319068D2359D9D7001CA6CA /* IPostsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPostsService.swift; sourceTree = "<group>"; };
 		031906902359D9F9001CA6CA /* IBoxesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IBoxesService.swift; sourceTree = "<group>"; };
 		031906932359DA2B001CA6CA /* ICommentsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICommentsService.swift; sourceTree = "<group>"; };
-		031906962359DA4F001CA6CA /* IViewsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IViewsService.swift; sourceTree = "<group>"; };
-		031906992359DA82001CA6CA /* ILikesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ILikesService.swift; sourceTree = "<group>"; };
 		0319069C2359DA9E001CA6CA /* ISharesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ISharesService.swift; sourceTree = "<group>"; };
 		03225D592365AC6E00025B29 /* Closures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Closures.swift; sourceTree = "<group>"; };
+		03225D5B2365ED6E00025B29 /* DataRequest+Logs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DataRequest+Logs.swift"; sourceTree = "<group>"; };
+		03225D5F2365F45400025B29 /* FeedBoxTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedBoxTableViewCell.xib; sourceTree = "<group>"; };
 		034BA07D23641D5C009B06FA /* ActionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionView.swift; sourceTree = "<group>"; };
 		034BA07F23642F14009B06FA /* ActionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActionView.xib; sourceTree = "<group>"; };
 		034BA081236435D1009B06FA /* ViewFromNib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewFromNib.swift; sourceTree = "<group>"; };
@@ -98,7 +94,7 @@
 		03CBD230235B277D001E1FFD /* FeedAdsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedAdsTableViewCell.xib; sourceTree = "<group>"; };
 		03CBD232235B2803001E1FFD /* FeedContentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedContentTableViewCell.swift; sourceTree = "<group>"; };
 		03CBD233235B2803001E1FFD /* FeedContentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedContentTableViewCell.xib; sourceTree = "<group>"; };
-		03CBD236235B295E001E1FFD /* FeedBTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedBTableViewCell.swift; sourceTree = "<group>"; };
+		03CBD236235B295E001E1FFD /* FeedBoxTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedBoxTableViewCell.swift; sourceTree = "<group>"; };
 		03DC3D15235CA15D009EC246 /* TableViewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewHelper.swift; sourceTree = "<group>"; };
 		03DC3D18235DE3DE009EC246 /* ASVideoLayerObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ASVideoLayerObject.swift; sourceTree = "<group>"; };
 		03DC3D19235DE3DE009EC246 /* ASVideoPlayerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ASVideoPlayerController.swift; sourceTree = "<group>"; };
@@ -212,10 +208,9 @@
 				0319068F2359D9DF001CA6CA /* Posts */,
 				031906922359DA04001CA6CA /* Boxes */,
 				031906952359DA3C001CA6CA /* Comments */,
-				031906982359DA5C001CA6CA /* Views */,
-				0319069B2359DA88001CA6CA /* Likes */,
 				0319069E2359DAA6001CA6CA /* Shares */,
 				0319068B2359D9AD001CA6CA /* BasicService.swift */,
+				03225D5B2365ED6E00025B29 /* DataRequest+Logs.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -253,24 +248,6 @@
 				031906932359DA2B001CA6CA /* ICommentsService.swift */,
 			);
 			path = Comments;
-			sourceTree = "<group>";
-		};
-		031906982359DA5C001CA6CA /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				031906852359D8F3001CA6CA /* ViewsService.swift */,
-				031906962359DA4F001CA6CA /* IViewsService.swift */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		0319069B2359DA88001CA6CA /* Likes */ = {
-			isa = PBXGroup;
-			children = (
-				031906872359D904001CA6CA /* LikesService.swift */,
-				031906992359DA82001CA6CA /* ILikesService.swift */,
-			);
-			path = Likes;
 			sourceTree = "<group>";
 		};
 		0319069E2359DAA6001CA6CA /* Shares */ = {
@@ -356,7 +333,8 @@
 				03CBD230235B277D001E1FFD /* FeedAdsTableViewCell.xib */,
 				03CBD232235B2803001E1FFD /* FeedContentTableViewCell.swift */,
 				03CBD233235B2803001E1FFD /* FeedContentTableViewCell.xib */,
-				03CBD236235B295E001E1FFD /* FeedBTableViewCell.swift */,
+				03CBD236235B295E001E1FFD /* FeedBoxTableViewCell.swift */,
+				03225D5F2365F45400025B29 /* FeedBoxTableViewCell.xib */,
 				034BA07D23641D5C009B06FA /* ActionView.swift */,
 				034BA07F23642F14009B06FA /* ActionView.xib */,
 			);
@@ -465,6 +443,7 @@
 				0319066D2359D578001CA6CA /* LaunchScreen.storyboard in Resources */,
 				0319066A2359D578001CA6CA /* Assets.xcassets in Resources */,
 				031906682359D576001CA6CA /* Main.storyboard in Resources */,
+				03225D602365F45400025B29 /* FeedBoxTableViewCell.xib in Resources */,
 				03CBD235235B2803001E1FFD /* FeedContentTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -521,7 +500,6 @@
 				03CBD228235B2561001E1FFD /* FeedPresentationModelProtocols.swift in Sources */,
 				0319069D2359DA9E001CA6CA /* ISharesService.swift in Sources */,
 				03CBD20C235ACF16001E1FFD /* IPost.swift in Sources */,
-				0319069A2359DA82001CA6CA /* ILikesService.swift in Sources */,
 				03CBD22A235B2561001E1FFD /* FeedViewController.swift in Sources */,
 				031906802359D890001CA6CA /* PostsService.swift in Sources */,
 				0319067E2359D7B7001CA6CA /* ServiceProvider.swift in Sources */,
@@ -530,8 +508,6 @@
 				03CBD210235ACF46001E1FFD /* IBoxPost.swift in Sources */,
 				031906942359DA2B001CA6CA /* ICommentsService.swift in Sources */,
 				03DC3D1C235DE3DE009EC246 /* ASVideoPlayerController.swift in Sources */,
-				031906972359DA4F001CA6CA /* IViewsService.swift in Sources */,
-				031906882359D904001CA6CA /* LikesService.swift in Sources */,
 				031906822359D89E001CA6CA /* BoxesService.swift in Sources */,
 				03CBD213235ACF6D001E1FFD /* ContentPost.swift in Sources */,
 				03CBD229235B2561001E1FFD /* FeedViewProtocols.swift in Sources */,
@@ -540,12 +516,12 @@
 				03DC3D1D235DE3DE009EC246 /* ASVideoContainer.swift in Sources */,
 				031906912359D9F9001CA6CA /* IBoxesService.swift in Sources */,
 				03CBD225235B2561001E1FFD /* FeedEntity.swift in Sources */,
-				03CBD237235B295E001E1FFD /* FeedBTableViewCell.swift in Sources */,
+				03CBD237235B295E001E1FFD /* FeedBoxTableViewCell.swift in Sources */,
 				03CBD215235ACF78001E1FFD /* BoxPost.swift in Sources */,
 				034BA082236435D1009B06FA /* ViewFromNib.swift in Sources */,
 				03DC3D16235CA15D009EC246 /* TableViewHelper.swift in Sources */,
-				031906862359D8F3001CA6CA /* ViewsService.swift in Sources */,
 				0319068C2359D9AD001CA6CA /* BasicService.swift in Sources */,
+				03225D5C2365ED6E00025B29 /* DataRequest+Logs.swift in Sources */,
 				031906612359D576001CA6CA /* AppDelegate.swift in Sources */,
 				031906632359D576001CA6CA /* SceneDelegate.swift in Sources */,
 				031906842359D8CF001CA6CA /* CommentsService.swift in Sources */,

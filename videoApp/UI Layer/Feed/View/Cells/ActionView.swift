@@ -26,4 +26,7 @@ class ActionView: UIView {
         self.action = action
     }
     
+    @IBAction func actionSelected(_ sender: Any) {
+        action?()
+    }
 }

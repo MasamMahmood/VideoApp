@@ -21,14 +21,14 @@ class Post: IPost {
             let title = dic["title"] as? String,
             let type = dic["type"] as? String,
             let width = dic["width"] as? Int,
-            let height = dic["height"] as? Int,
-            let dateString = dic["created_at"] as? String {
+            let height = dic["height"] as? Int {
             self.id = id
             self.title = title
             self.type = type
             self.width = width
             self.height = height
-            createAt = Date()
+            createAt = Date() //,let dateString = dic["created_at"] as? String
         }
+        print(width)
     }
 }

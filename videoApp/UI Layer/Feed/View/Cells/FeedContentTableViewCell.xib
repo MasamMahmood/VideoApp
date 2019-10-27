@@ -68,7 +68,7 @@
                     <constraint firstItem="rDf-u9-aSL" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="fwP-n4-Bk4"/>
                     <constraint firstAttribute="trailing" secondItem="yUF-ti-Cfl" secondAttribute="trailing" id="h4H-xN-dTB"/>
                     <constraint firstItem="yUF-ti-Cfl" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="i1u-ho-1nm"/>
-                    <constraint firstAttribute="bottom" secondItem="yUF-ti-Cfl" secondAttribute="bottom" constant="20" id="uSH-e0-k6K"/>
+                    <constraint firstAttribute="bottom" secondItem="yUF-ti-Cfl" secondAttribute="bottom" priority="999" constant="20" id="uSH-e0-k6K"/>
                     <constraint firstItem="rDf-u9-aSL" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="40" id="w8e-KB-RIR"/>
                     <constraint firstItem="yUF-ti-Cfl" firstAttribute="top" secondItem="rDf-u9-aSL" secondAttribute="bottom" id="y62-eP-wbg"/>
                 </constraints>

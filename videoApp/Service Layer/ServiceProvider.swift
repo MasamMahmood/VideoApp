@@ -9,7 +9,7 @@
 import Foundation
 import Alamofire
 
-class ServiceProvider {
+final class ServiceProvider {
     static let instance = ServiceProvider()
     
     private struct Consts {
@@ -20,11 +20,12 @@ class ServiceProvider {
         static let defaultHTTPTimeoutInterval: TimeInterval = 20
     }
 
+    public let postService: IPostsService
+
     
     // MARK: - Properties
-    public let sessionManager: SessionManager
-    public let sessionManagerCache: SessionManager
-    public let postService: IPostsService
+    private let sessionManager: SessionManager
+    private let sessionManagerCache: SessionManager
     private let configuration: URLSessionConfiguration
     private let configurationCache: URLSessionConfiguration
     
