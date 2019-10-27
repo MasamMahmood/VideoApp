@@ -18,10 +18,12 @@ enum ActionType: String {
 class ActionView: UIView {
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var label: UILabel!
+    private var action: VoidClosure?
     
-    func setup(type: ActionType, text: String) {
+    func setup(type: ActionType, text: String, action: VoidClosure?) {
         label.text = text
         image.image = UIImage(named: type.rawValue)
+        self.action = action
     }
     
 }

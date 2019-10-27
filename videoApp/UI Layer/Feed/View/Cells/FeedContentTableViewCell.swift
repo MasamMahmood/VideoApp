@@ -10,10 +10,15 @@ import UIKit
 import SDWebImage
 import AVFoundation
 
+protocol FeedContentCellDelegate: NSObjectProtocol {
+    func likePressed()
+    func commentPressed()
+    func sharePressed()
+}
+
 final class FeedContentTableViewCell: UITableViewCell, ICollectionCellFromNib, ASAutoPlayVideoLayerContainer {
    
     //MARK: - ASAutoPlayVideoLayerContainer
-
     var videoLayer: AVPlayerLayer = AVPlayerLayer()
         
     var videoURL: String? {
@@ -39,6 +44,7 @@ final class FeedContentTableViewCell: UITableViewCell, ICollectionCellFromNib, A
 
     static var reuseIdentifier: String = "FeedContentTableViewCell"
     
+    weak var delegate: FeedContentCellDelegate? = nil
     @IBOutlet weak var videoContainer: UIView!
     @IBOutlet weak var actionsContainer: UIStackView!
     @IBOutlet weak var mockImage: UIImageView!
@@ -86,19 +92,19 @@ final class FeedContentTableViewCell: UITableViewCell, ICollectionCellFromNib, A
     
     private func setupActions(post: IContentPost) {
         let views: ActionView = ActionView.loadFromXib()
-        views.setup(type: .views, text: "\(post.views)")
+        views.setup(type: .views, text: "\(post.views)", action: nil)
         actionsContainer.addArrangedSubview(views)
         
         let likes: ActionView = ActionView.loadFromXib()
-        likes.setup(type: .likes, text: "\(post.likes)")
+        likes.setup(type: .likes, text: "\(post.likes)", action: delegate?.likePressed)
         actionsContainer.addArrangedSubview(likes)
         
         let comments: ActionView = ActionView.loadFromXib()
-        comments.setup(type: .comments, text: "\(post.commentsCount)")
+        comments.setup(type: .comments, text: "\(post.commentsCount)", action: delegate?.commentPressed)
         actionsContainer.addArrangedSubview(comments)
         
         let shares: ActionView = ActionView.loadFromXib()
-        shares.setup(type: .shares, text: "\(post.shares)")
+        shares.setup(type: .shares, text: "\(post.shares)", action: delegate?.sharePressed)
         actionsContainer.addArrangedSubview(shares)
 
     }

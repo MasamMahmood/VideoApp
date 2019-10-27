@@ -88,6 +88,7 @@ extension FeedViewController: FeedViewInput {
             tableView.endUpdates()
         } else {
             tableView.reloadData()
+            refreshControl.endRefreshing()
         }
     }
 
@@ -101,6 +102,7 @@ extension FeedViewController: UITableViewDelegate, UITableViewDataSource, UITabl
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let content = posts[indexPath.row] as? IContentPost {
             let cell: FeedContentTableViewCell = tableView.dequeueReusableCell(for: indexPath)
+            cell.delegate = self
             cell.setup(with: content)
             return cell
         } else if let box = posts[indexPath.row] as? IBoxPost {
@@ -142,6 +144,23 @@ extension FeedViewController: UITableViewDelegate, UITableViewDataSource, UITabl
             pausePlayVideos()
         }
     }
+}
+
+extension FeedViewController: FeedContentCellDelegate {
+   
+    func likePressed() {
+        
+    }
+    
+    func commentPressed() {
+        
+    }
+    
+    func sharePressed() {
+        
+    }
+    
+    
 }
 
 private extension FeedViewController {
