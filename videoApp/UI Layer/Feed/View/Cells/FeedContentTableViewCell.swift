@@ -76,7 +76,7 @@ final class FeedContentTableViewCell: UITableViewCell, ICollectionCellFromNib, A
         videoURL = post.postUrl
         titleLabel.text = post.title
         mockImage.sd_setImage(with: URL(string: post.thumbnailUrl ?? ""), completed: nil)
-        videoHeightConstraint.constant = max(countHeight(width: post.width, height: post.height), superview?.frame.height ?? 0)
+        videoHeightConstraint.constant = countHeight(width: post.width, height: post.height)
         layoutSubviews()
         setupActions(post: post)
     }
@@ -88,7 +88,7 @@ final class FeedContentTableViewCell: UITableViewCell, ICollectionCellFromNib, A
     private func countHeight(width: Int, height: Int) -> CGFloat {
         guard width != 0 else { return 100 }
         let imageProportion = videoContainer.frame.width / CGFloat(width)
-        return round(CGFloat(height) * imageProportion)
+        return (CGFloat(height) * imageProportion)
     }
     
     private func setupActions(post: IContentPost) {
