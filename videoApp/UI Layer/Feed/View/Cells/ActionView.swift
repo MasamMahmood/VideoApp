@@ -19,14 +19,22 @@ class ActionView: UIView {
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var label: UILabel!
     private var action: VoidClosure?
-    
-    func setup(type: ActionType, text: String, action: VoidClosure?) {
-        label.text = text
+    private var type: ActionType?
+    private var counter: Int = 0
+
+    func setup(type: ActionType, counter: Int, action: VoidClosure?) {
+        self.type = type
+        self.counter = counter
+        label.text = "\(counter)"
         image.image = UIImage(named: type.rawValue)
         self.action = action
     }
     
     @IBAction func actionSelected(_ sender: Any) {
+        if type == .likes || type == .shares {
+            counter = counter + 1
+            label.text = "\(counter)"
+        }
         action?()
     }
 }

@@ -93,19 +93,19 @@ final class FeedContentTableViewCell: UITableViewCell, ICollectionCellFromNib, A
     
     private func setupActions(post: IContentPost) {
         let views: ActionView = ActionView.loadFromXib()
-        views.setup(type: .views, text: "\(post.views)", action: nil)
+        views.setup(type: .views, counter: post.views, action: nil)
         actionsContainer.addArrangedSubview(views)
         
         let likes: ActionView = ActionView.loadFromXib()
-        likes.setup(type: .likes, text: "\(post.likes)", action: delegate?.likePressed)
+        likes.setup(type: .likes, counter: post.likes, action: delegate?.likePressed)
         actionsContainer.addArrangedSubview(likes)
         
         let comments: ActionView = ActionView.loadFromXib()
-        comments.setup(type: .comments, text: "\(post.commentsCount)", action: delegate?.commentPressed)
+        comments.setup(type: .comments, counter: post.commentsCount, action: delegate?.commentPressed)
         actionsContainer.addArrangedSubview(comments)
         
         let shares: ActionView = ActionView.loadFromXib()
-        shares.setup(type: .shares, text: "\(post.shares)", action: delegate?.sharePressed)
+        shares.setup(type: .shares, counter: post.shares, action: delegate?.sharePressed)
         actionsContainer.addArrangedSubview(shares)
 
     }
