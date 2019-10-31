@@ -18,6 +18,8 @@ protocol ASAutoPlayVideoLayerContainer {
     var postId: String { get set }
     var videoLayer: AVPlayerLayer { get set }
     func visibleVideoHeight() -> CGFloat
+    func videoPlayStarted(mute: Bool)
+    func videoPlayStopped()
 }
 
 class ASVideoPlayerController: NSObject, NSCacheDelegate {
@@ -225,6 +227,7 @@ class ASVideoPlayerController: NSObject, NSCacheDelegate {
                 maxHeight = height
                 videoCellContainer = containerCell
             }
+            containerCell.videoPlayStopped()
             pauseRemoveLayer(layer: containerCell.videoLayer, url: videoCellURL, layerHeight: height)
         }
         guard let videoCell = videoCellContainer,
@@ -242,6 +245,7 @@ class ASVideoPlayerController: NSObject, NSCacheDelegate {
             if appEnteredFromBackground {
                 setupVideoFor(url: videoCellURL)
             }
+            videoCell.videoPlayStarted(mute: mute)
             playVideo(withLayer: videoCell.videoLayer, url: videoCellURL)
         }
     }

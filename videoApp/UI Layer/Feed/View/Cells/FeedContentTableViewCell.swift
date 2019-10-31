@@ -43,10 +43,21 @@ final class FeedContentTableViewCell: UITableViewCell, ICollectionCellFromNib, A
         return visibleVideoFrame.size.height
     }
     
+    func videoPlayStarted(mute: Bool) {
+        self.mute = mute
+        audioButton.setImage(UIImage(named: mute ? "mute" :"unmute"), for: .normal)
+        audioButton.isHidden = false
+    }
+    
+    func videoPlayStopped() {
+        audioButton.isHidden = true
+    }
+    
     //MARK: - ICollectionCellFromNib
 
     static var reuseIdentifier: String = "FeedContentTableViewCell"
     
+    private var mute: Bool = false
     weak var delegate: FeedContentCellDelegate? = nil
     @IBOutlet weak var videoContainer: UIView!
     @IBOutlet weak var actionsContainer: UIStackView!
@@ -85,9 +96,13 @@ final class FeedContentTableViewCell: UITableViewCell, ICollectionCellFromNib, A
         videoHeightConstraint.constant = countHeight(width: post.width, height: post.height)
         layoutSubviews()
         setupActions(post: post)
+        self.mute = mute
+        audioButton.setImage(UIImage(named: mute ? "mute" :"unmute"), for: .normal)
     }
-      
+
     @IBAction func soundButtonPressed(_ sender: Any) {
+        mute = !mute
+        audioButton.setImage(UIImage(named: mute ? "mute" :"unmute"), for: .normal)
         delegate?.mutePressed()
     }
       
