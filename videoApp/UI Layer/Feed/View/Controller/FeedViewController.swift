@@ -15,19 +15,15 @@ class FeedViewController: UIViewController {
     private var viewOutput: FeedViewOutput?
     private var posts: [IPost] = []
     private let refreshControl = UIRefreshControl()
-
-    override func viewDidLoad() {
-        let presenter = FeedPresentationModel(view: self,
-                                              service: ServiceProvider.instance.postService)
-        self.output = presenter
-        setupTableView()
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(self.appEnteredFromBackground),
-                                               name: UIApplication.didEnterBackgroundNotification,
-                                               object: nil)
-
-        viewOutput?.feedRequested()
+    private var mute: Bool {
+        return ASVideoPlayerController.sharedVideoPlayer.mute
     }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setup()
+    }
+    
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -38,6 +34,21 @@ class FeedViewController: UIViewController {
         ASVideoPlayerController.sharedVideoPlayer.pausePlayVideosFor(tableView: tableView, appEnteredFromBackground: true)
     }
 
+    private func setup() {
+        let presenter = FeedPresentationModel(view: self,
+                                              service: ServiceProvider.instance.postService)
+        self.output = presenter
+        setupTableView()
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(self.appEnteredFromBackground),
+                                               name: UIApplication.didEnterBackgroundNotification,
+                                               object: nil)
+
+        viewOutput?.feedRequested()
+        ASVideoPlayerController.sharedVideoPlayer.sendVideoCounterAction = viewOutput?.postViewed(postId:)
+    }
+    
     private func pausePlayVideos(){
         ASVideoPlayerController.sharedVideoPlayer.pausePlayVideosFor(tableView: tableView)
     }
@@ -104,15 +115,16 @@ extension FeedViewController: UITableViewDelegate, UITableViewDataSource, UITabl
         if let content = posts[indexPath.row] as? IContentPost {
             let cell: FeedContentTableViewCell = tableView.dequeueReusableCell(for: indexPath)
             cell.delegate = self
-            cell.setup(with: content)
+            cell.setup(with: content, mute: mute)
             return cell
-        } else if let box = posts[indexPath.row] as? IBoxPost {
-            let cell: FeedBoxTableViewCell = tableView.dequeueReusableCell(for: indexPath)
-            cell.setup(with: box)
-            return cell
-        } else {
-            
         }
+//        } else if let box = posts[indexPath.row] as? IBoxPost {
+//            let cell: FeedBoxTableViewCell = tableView.dequeueReusableCell(for: indexPath)
+//            cell.setup(with: box)
+//            return cell
+//        } else {
+//
+//        }
         return UITableViewCell()
     }
     
@@ -149,18 +161,21 @@ extension FeedViewController: UITableViewDelegate, UITableViewDataSource, UITabl
 
 extension FeedViewController: FeedContentCellDelegate {
    
-    func likePressed() {
-        viewOutput?.postLiked(postId:"")
+    func likePressed(id: String) {
+        viewOutput?.postLiked(postId:id)
     }
     
-    func commentPressed() {
+    func commentPressed(id: String) {
         
     }
     
-    func sharePressed() {
+    func sharePressed(id: String) {
         
     }
     
+    func mutePressed() {
+        ASVideoPlayerController.sharedVideoPlayer.mute = !mute
+    }
     
 }
 

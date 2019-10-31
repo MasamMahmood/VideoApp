@@ -37,6 +37,44 @@ class PostsService: BasicService, IPostsService {
         request.resume()
     }
     
+    func viewPost(userId: String, postId: String) {
+        let urlString = basicURL + Endpoints.views.rawValue
+        let url: URL! = URL(string: urlString)
+        let params = ["userId": userId, "postId": postId] as [String : Any]
+        let request = sessionManager.request(url, method: .post,
+                                             parameters: params,
+                                             encoding: JSONEncoding.default)
+
+        request.log().responseJSON {(response) in
+            switch response.result {
+            case .success(_):
+                print("success view")
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+        request.resume()
+    }
+    
+    func sharePost(userId: String, postId: String, completion: StringClosure) {
+        let urlString = basicURL + Endpoints.shares.rawValue + "/add"
+        let url: URL! = URL(string: urlString)
+        let params = ["userId": userId, "postId": postId] as [String : Any]
+        let request = sessionManager.request(url, method: .post,
+                                             parameters: params,
+                                             encoding: JSONEncoding.default)
+
+        request.log().responseJSON {(response) in
+            switch response.result {
+            case .success(_):
+                print("success shares")
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+        request.resume()
+    }
+    
     func getPosts(userId: String,
                   startingId: String?,
                   afterId: String?,

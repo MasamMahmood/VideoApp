@@ -15,11 +15,14 @@ import AVFoundation
  */
 protocol ASAutoPlayVideoLayerContainer {
     var videoURL: String? { get set }
+    var postId: String { get set }
     var videoLayer: AVPlayerLayer { get set }
     func visibleVideoHeight() -> CGFloat
 }
 
 class ASVideoPlayerController: NSObject, NSCacheDelegate {
+   
+    var sendVideoCounterAction: StringClosure? = nil
     var minimumLayerHeightToPlay: CGFloat = 60
     // Mute unmute video
     var mute = false
@@ -28,6 +31,8 @@ class ASVideoPlayerController: NSObject, NSCacheDelegate {
     static let sharedVideoPlayer = ASVideoPlayerController()
     //video url for currently playing video
     private var videoURL: String?
+    private var videoId: String?
+
     /**
      Stores video url as key and true as value when player item associated to the url
      is being observed for its status change.
@@ -39,6 +44,7 @@ class ASVideoPlayerController: NSObject, NSCacheDelegate {
     private var videoLayers = VideoLayers()
     // Current AVPlapyerLayer that is playing video
     private var currentLayer: AVPlayerLayer?
+    private var timer: Timer? = nil
     
     override init() {
         super.init()
@@ -96,8 +102,14 @@ class ASVideoPlayerController: NSObject, NSCacheDelegate {
             }
         }
     }
+    
     // Play video with the AVPlayerLayer provided
     func playVideo(withLayer layer: AVPlayerLayer, url: String) {
+        timer?.invalidate()
+        timer = Timer.scheduledTimer(withTimeInterval: 5.0, repeats: false, block: { [weak self] timer in
+            guard let videoId = self?.videoId else { return }
+            self?.sendVideoCounterAction?(videoId)
+        })
         videoURL = url
         currentLayer = layer
         if let videoContainer = self.videoCache.object(forKey: url as NSString) {
@@ -115,6 +127,7 @@ class ASVideoPlayerController: NSObject, NSCacheDelegate {
     }
     
     private func pauseVideo(forLayer layer: AVPlayerLayer, url: String) {
+        timer?.invalidate()
         videoURL = nil
         currentLayer = nil
         if let videoContainer = self.videoCache.object(forKey: url as NSString) {
@@ -206,6 +219,7 @@ class ASVideoPlayerController: NSObject, NSCacheDelegate {
                 let videoCellURL = containerCell.videoURL else {
                     continue
             }
+            
             let height = containerCell.visibleVideoHeight()
             if maxHeight < height {
                 maxHeight = height
@@ -217,6 +231,7 @@ class ASVideoPlayerController: NSObject, NSCacheDelegate {
             let videoCellURL = videoCell.videoURL else {
             return
         }
+        self.videoId = videoCell.postId
         let minCellLayerHeight = videoCell.videoLayer.bounds.size.height * 0.5
         /**
          Visible video layer height should be at least more than max of predefined minimum height and

@@ -9,3 +9,4 @@
 import Foundation
 
 typealias VoidClosure = () -> Void
+typealias StringClosure = (String) -> Void

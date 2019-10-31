@@ -16,5 +16,6 @@ protocol IPostsService {
                   completion:@escaping (([IPost]?) -> Void))
     func cancelGet()
     func likePost(userId: String, postId: String)
-
+    func viewPost(userId: String, postId: String)
+    func sharePost(userId: String, postId: String, completion: StringClosure)
 }

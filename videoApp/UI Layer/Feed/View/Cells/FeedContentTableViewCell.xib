@@ -76,6 +76,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="actionsContainer" destination="yUF-ti-Cfl" id="rua-Gl-dKV"/>
+                <outlet property="audioButton" destination="U7k-74-XEx" id="UhP-yb-pNO"/>
                 <outlet property="mockImage" destination="QUz-gI-Y9s" id="lDj-F5-E0e"/>
                 <outlet property="titleLabel" destination="Ltk-Kq-NDc" id="uD8-Wn-Zh6"/>
                 <outlet property="videoContainer" destination="rDf-u9-aSL" id="v0Z-GK-9s3"/>

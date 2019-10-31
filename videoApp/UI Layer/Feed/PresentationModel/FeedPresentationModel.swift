@@ -90,7 +90,7 @@ extension FeedPresentationModel: FeedViewOutput {
     }
     
     func postViewed(postId: String) {
-        
+        service.viewPost(userId: "niltest", postId: postId)
     }
 
 }

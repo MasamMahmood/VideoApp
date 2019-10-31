@@ -11,9 +11,10 @@ import SDWebImage
 import AVFoundation
 
 protocol FeedContentCellDelegate: NSObjectProtocol {
-    func likePressed()
-    func commentPressed()
-    func sharePressed()
+    func likePressed(id: String)
+    func commentPressed(id: String)
+    func sharePressed(id: String)
+    func mutePressed()
 }
 
 final class FeedContentTableViewCell: UITableViewCell, ICollectionCellFromNib, ASAutoPlayVideoLayerContainer {
@@ -29,6 +30,8 @@ final class FeedContentTableViewCell: UITableViewCell, ICollectionCellFromNib, A
             videoLayer.isHidden = videoURL == nil
         }
     }
+    
+    var postId: String = ""
     
     func visibleVideoHeight() -> CGFloat {
         let videoFrameInParentSuperView: CGRect? = self.superview?.superview?.convert(videoContainer.frame, from: videoContainer)
@@ -50,7 +53,9 @@ final class FeedContentTableViewCell: UITableViewCell, ICollectionCellFromNib, A
     @IBOutlet weak var mockImage: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var videoHeightConstraint: NSLayoutConstraint!
-
+    @IBOutlet weak var audioButton: UIButton!
+    
+    
     //MARK: - Cell
 
     override func prepareForReuse() {
@@ -72,7 +77,8 @@ final class FeedContentTableViewCell: UITableViewCell, ICollectionCellFromNib, A
         videoLayer.frame = CGRect(x: 0, y: 0, width: superview?.frame.width ?? 0, height: videoHeightConstraint.constant)
     }
     
-    func setup(with post: IContentPost) {
+    func setup(with post: IContentPost, mute: Bool) {
+        postId = post.id
         videoURL = post.postUrl
         titleLabel.text = post.title
         mockImage.sd_setImage(with: URL(string: post.thumbnailUrl ?? ""), completed: nil)
@@ -82,7 +88,7 @@ final class FeedContentTableViewCell: UITableViewCell, ICollectionCellFromNib, A
     }
       
     @IBAction func soundButtonPressed(_ sender: Any) {
-    
+        delegate?.mutePressed()
     }
       
     private func countHeight(width: Int, height: Int) -> CGFloat {
@@ -97,15 +103,15 @@ final class FeedContentTableViewCell: UITableViewCell, ICollectionCellFromNib, A
         actionsContainer.addArrangedSubview(views)
         
         let likes: ActionView = ActionView.loadFromXib()
-        likes.setup(type: .likes, counter: post.likes, action: delegate?.likePressed)
+        likes.setup(type: .likes, counter: post.likes, action: {[weak self] in self?.delegate?.likePressed(id: post.id) })
         actionsContainer.addArrangedSubview(likes)
         
         let comments: ActionView = ActionView.loadFromXib()
-        comments.setup(type: .comments, counter: post.commentsCount, action: delegate?.commentPressed)
+        comments.setup(type: .comments, counter: post.commentsCount, action: {[weak self] in self?.delegate?.commentPressed(id: post.id) })
         actionsContainer.addArrangedSubview(comments)
         
         let shares: ActionView = ActionView.loadFromXib()
-        shares.setup(type: .shares, counter: post.shares, action: delegate?.sharePressed)
+        shares.setup(type: .shares, counter: post.shares, action: {[weak self] in self?.delegate?.sharePressed(id: post.id) })
         actionsContainer.addArrangedSubview(shares)
 
     }
