@@ -66,7 +66,6 @@ final class FeedContentTableViewCell: UITableViewCell, ICollectionCellFromNib, A
     @IBOutlet weak var videoHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var audioButton: UIButton!
     
-    
     //MARK: - Cell
 
     override func prepareForReuse() {

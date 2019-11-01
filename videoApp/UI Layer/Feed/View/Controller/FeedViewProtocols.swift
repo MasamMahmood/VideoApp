@@ -11,6 +11,7 @@ import UIKit
 protocol FeedViewInput: class {
     var output: FeedViewOutput? { get set }
     func feedRecieved(posts: [IPost], indexPathToReload: [IndexPath]?)
+    func showShare(text: String)
 }
 
 protocol FeedViewOutput: class {

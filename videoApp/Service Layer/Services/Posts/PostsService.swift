@@ -56,7 +56,7 @@ class PostsService: BasicService, IPostsService {
         request.resume()
     }
     
-    func sharePost(userId: String, postId: String, completion: StringClosure) {
+    func sharePost(userId: String, postId: String) {
         let urlString = basicURL + Endpoints.shares.rawValue + "/add"
         let url: URL! = URL(string: urlString)
         let params = ["userId": userId, "postId": postId] as [String : Any]

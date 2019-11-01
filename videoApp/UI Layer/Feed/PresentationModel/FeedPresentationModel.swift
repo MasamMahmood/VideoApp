@@ -82,11 +82,13 @@ extension FeedPresentationModel: FeedViewOutput {
     }
     
     func postLiked(postId: String) {
-        service.likePost(userId: "niltest", postId: lastId!)
+        service.likePost(userId: "niltest", postId: postId)
     }
     
     func postShared(postId: String) {
-        
+        service.sharePost(userId: "niltest", postId: postId)
+        let text = "Hey! You gotta see that! 😂🤣 https://lols.link/share?\(postId)"
+        view.showShare(text: text)
     }
     
     func postViewed(postId: String) {

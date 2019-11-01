@@ -103,6 +103,13 @@ extension FeedViewController: FeedViewInput {
             refreshControl.endRefreshing()
         }
     }
+    
+    func showShare(text: String) {
+        let textToShare = [text]
+        let activityViewController = UIActivityViewController(activityItems: textToShare, applicationActivities: nil)
+        activityViewController.popoverPresentationController?.sourceView = self.view 
+        self.present(activityViewController, animated: true, completion: nil)
+    }
 
 }
 
@@ -170,7 +177,7 @@ extension FeedViewController: FeedContentCellDelegate {
     }
     
     func sharePressed(id: String) {
-        
+        viewOutput?.postShared(postId: id)
     }
     
     func mutePressed() {
