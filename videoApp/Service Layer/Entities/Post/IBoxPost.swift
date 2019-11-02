@@ -12,7 +12,7 @@ protocol IBoxPost: IPost {
     var thumbnailUrl: String { get }
     var animationUrl: String { get }
     var status: String { get }
-    var code: String { get }
-    var prizeUrl: String { get }
-    var prizeType: String { get }
+    var code: String? { get }
+    var prizeUrl: String? { get }
+    var prizeType: String? { get }
 }

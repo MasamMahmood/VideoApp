@@ -24,6 +24,10 @@
 		034BA07E23641D5C009B06FA /* ActionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034BA07D23641D5C009B06FA /* ActionView.swift */; };
 		034BA08023642F14009B06FA /* ActionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 034BA07F23642F14009B06FA /* ActionView.xib */; };
 		034BA082236435D1009B06FA /* ViewFromNib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034BA081236435D1009B06FA /* ViewFromNib.swift */; };
+		03607E43236D9573009EEB68 /* BoxesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03607E42236D9573009EEB68 /* BoxesViewController.swift */; };
+		03607E45236D9589009EEB68 /* BoxesPresentationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03607E44236D9589009EEB68 /* BoxesPresentationModel.swift */; };
+		03607E47236DC183009EEB68 /* BoxesViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03607E46236DC183009EEB68 /* BoxesViewProtocol.swift */; };
+		03607E49236DC27D009EEB68 /* IBoxesPresentationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03607E48236DC27D009EEB68 /* IBoxesPresentationModel.swift */; };
 		03CBD208235AC210001E1FFD /* VideoSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CBD207235AC210001E1FFD /* VideoSessionManager.swift */; };
 		03CBD20A235ACA15001E1FFD /* AdPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CBD209235ACA15001E1FFD /* AdPost.swift */; };
 		03CBD20C235ACF16001E1FFD /* IPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CBD20B235ACF16001E1FFD /* IPost.swift */; };
@@ -69,6 +73,10 @@
 		034BA07D23641D5C009B06FA /* ActionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionView.swift; sourceTree = "<group>"; };
 		034BA07F23642F14009B06FA /* ActionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActionView.xib; sourceTree = "<group>"; };
 		034BA081236435D1009B06FA /* ViewFromNib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewFromNib.swift; sourceTree = "<group>"; };
+		03607E42236D9573009EEB68 /* BoxesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxesViewController.swift; sourceTree = "<group>"; };
+		03607E44236D9589009EEB68 /* BoxesPresentationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxesPresentationModel.swift; sourceTree = "<group>"; };
+		03607E46236DC183009EEB68 /* BoxesViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxesViewProtocol.swift; sourceTree = "<group>"; };
+		03607E48236DC27D009EEB68 /* IBoxesPresentationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IBoxesPresentationModel.swift; sourceTree = "<group>"; };
 		03CBD207235AC210001E1FFD /* VideoSessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoSessionManager.swift; sourceTree = "<group>"; };
 		03CBD209235ACA15001E1FFD /* AdPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdPost.swift; sourceTree = "<group>"; };
 		03CBD20B235ACF16001E1FFD /* IPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPost.swift; sourceTree = "<group>"; };
@@ -183,6 +191,10 @@
 		031906792359D6CB001CA6CA /* Boxes */ = {
 			isa = PBXGroup;
 			children = (
+				03607E46236DC183009EEB68 /* BoxesViewProtocol.swift */,
+				03607E42236D9573009EEB68 /* BoxesViewController.swift */,
+				03607E48236DC27D009EEB68 /* IBoxesPresentationModel.swift */,
+				03607E44236D9589009EEB68 /* BoxesPresentationModel.swift */,
 			);
 			path = Boxes;
 			sourceTree = "<group>";
@@ -478,6 +490,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				03CBD228235B2561001E1FFD /* FeedPresentationModelProtocols.swift in Sources */,
+				03607E43236D9573009EEB68 /* BoxesViewController.swift in Sources */,
 				03CBD20C235ACF16001E1FFD /* IPost.swift in Sources */,
 				03CBD22A235B2561001E1FFD /* FeedViewController.swift in Sources */,
 				031906802359D890001CA6CA /* PostsService.swift in Sources */,
@@ -486,7 +499,10 @@
 				03CBD20E235ACF2C001E1FFD /* IContentPost.swift in Sources */,
 				03CBD210235ACF46001E1FFD /* IBoxPost.swift in Sources */,
 				03DC3D1C235DE3DE009EC246 /* ASVideoPlayerController.swift in Sources */,
+				03607E47236DC183009EEB68 /* BoxesViewProtocol.swift in Sources */,
 				031906822359D89E001CA6CA /* BoxesService.swift in Sources */,
+				03607E45236D9589009EEB68 /* BoxesPresentationModel.swift in Sources */,
+				03607E49236DC27D009EEB68 /* IBoxesPresentationModel.swift in Sources */,
 				03CBD213235ACF6D001E1FFD /* ContentPost.swift in Sources */,
 				03CBD229235B2561001E1FFD /* FeedViewProtocols.swift in Sources */,
 				03CBD22F235B2765001E1FFD /* FeedAdsTableViewCell.swift in Sources */,

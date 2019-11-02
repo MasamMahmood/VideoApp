@@ -21,6 +21,7 @@ final class ServiceProvider {
     }
 
     public let postService: IPostsService
+    public let boxService: IBoxesService
 
     // MARK: - Properties
     
@@ -48,6 +49,7 @@ final class ServiceProvider {
         sessionManagerCache = VideoSessionManager(configuration: configurationCache)
         
         postService = PostsService(sessionManager: sessionManager)
+        boxService = BoxesService(sessionManager: sessionManager)
     }
 }
 

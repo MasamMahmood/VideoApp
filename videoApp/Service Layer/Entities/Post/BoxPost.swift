@@ -12,23 +12,20 @@ class BoxPost: Post, IBoxPost {
     var thumbnailUrl: String = ""
     var animationUrl: String = ""
     var status: String = ""
-    var code: String = ""
-    var prizeUrl: String = ""
-    var prizeType: String = ""
+    var code: String? = ""
+    var prizeUrl: String? = ""
+    var prizeType: String? = ""
     
     required init(dic: [String : Any]) {
         if let animationUrl = dic["animationUrl"] as? String,
             let thumbnailUrl = dic["thumbnailUrl"] as? String,
-            let status = dic["status"] as? String,
-            let code = dic["code"] as? String,
-            let prizeUrl = dic["prizeUrl"] as? String,
-            let prizeType = dic["prizeType"] as? String {
+            let status = dic["status"] as? String {
             self.animationUrl = animationUrl
             self.thumbnailUrl = thumbnailUrl
             self.status = status
-            self.code = code
-            self.prizeUrl = prizeUrl
-            self.prizeType = prizeType
+            self.code = dic["code"] as? String
+            self.prizeUrl = dic["prizeUrl"] as? String
+            self.prizeType = dic["prizeType"] as? String
         }
         super.init(dic: dic)
     }

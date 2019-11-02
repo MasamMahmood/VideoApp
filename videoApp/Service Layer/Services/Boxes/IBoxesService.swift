@@ -6,4 +6,6 @@
 //  Copyright © 2019 Olga Vorona. All rights reserved.
 //
 
-import Foundation
+protocol IBoxesService {
+    func getBoxes(userId: String, completion: @escaping (([IBoxPost]?) -> Void))
+}

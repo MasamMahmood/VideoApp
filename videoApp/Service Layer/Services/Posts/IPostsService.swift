@@ -13,7 +13,7 @@ protocol IPostsService {
                   startingId: String?,
                   afterId: String?,
                   pageSize: String,
-                  completion:@escaping (([IPost]?) -> Void))
+                  completion: @escaping (([IPost]?) -> Void))
     func cancelGet()
     func likePost(userId: String, postId: String)
     func viewPost(userId: String, postId: String)

@@ -10,14 +10,29 @@
         <!--Item 2-->
         <scene sceneID="OuZ-fw-D1I">
             <objects>
-                <viewController id="kWO-q7-uRf" sceneMemberID="viewController">
+                <viewController id="kWO-q7-uRf" customClass="BoxesViewController" customModule="videoApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="E8C-hT-wcp">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9fQ-M1-lhd">
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="9fQ-M1-lhd" firstAttribute="leading" secondItem="oaC-ms-Ew9" secondAttribute="leading" id="Fiv-5e-2ZY"/>
+                            <constraint firstItem="oaC-ms-Ew9" firstAttribute="trailing" secondItem="9fQ-M1-lhd" secondAttribute="trailing" id="Vdt-ca-F1y"/>
+                            <constraint firstItem="9fQ-M1-lhd" firstAttribute="top" secondItem="oaC-ms-Ew9" secondAttribute="top" id="aFQ-Mu-gLe"/>
+                            <constraint firstItem="oaC-ms-Ew9" firstAttribute="bottom" secondItem="9fQ-M1-lhd" secondAttribute="bottom" id="iXh-WF-5S0"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="oaC-ms-Ew9"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 2" id="QfQ-YZ-KeJ"/>
+                    <connections>
+                        <outlet property="tableView" destination="9fQ-M1-lhd" id="qd0-gn-ysw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LaP-kq-eNn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -13,7 +13,6 @@ class PostsService: BasicService, IPostsService {
    
     enum PostType: String {
         case video
-        case ad
         case box
     }
     private weak var getRequest: DataRequest? = nil
@@ -79,10 +78,10 @@ class PostsService: BasicService, IPostsService {
                   startingId: String?,
                   afterId: String?,
                   pageSize: String,
-                  completion:@escaping (([IPost]?) -> Void)) {
+                  completion: @escaping (([IPost]?) -> Void)) {
         let urlString = basicURL + Endpoints.posts.rawValue
         let url: URL! = URL(string: urlString)
-        var params = ["userId": UUID().uuidString, "pageSize": pageSize] as [String : Any]
+        var params = ["userId": userId, "pageSize": pageSize] as [String : Any]
         if let afterId = afterId {
             params["afterPostId"] = afterId
         }
@@ -123,8 +122,6 @@ class PostsService: BasicService, IPostsService {
           let value = PostType(rawValue: type) else { return nil }
           let result: IPost?
           switch value {
-          case .ad:
-              result = Post(dic: dic)
           case .video:
               result = ContentPost(dic: dic)
           case .box:
