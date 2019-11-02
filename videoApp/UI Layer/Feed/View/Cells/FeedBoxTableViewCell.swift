@@ -12,6 +12,7 @@ class FeedBoxTableViewCell: UITableViewCell, ICollectionCellFromNib {
     static var reuseIdentifier: String = "FeedBoxTableViewCell"
     
     func setup(with post: IBoxPost) {
+   
     }
 
 }

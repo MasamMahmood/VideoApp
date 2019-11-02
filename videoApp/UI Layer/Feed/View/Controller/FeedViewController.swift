@@ -124,14 +124,11 @@ extension FeedViewController: UITableViewDelegate, UITableViewDataSource, UITabl
             cell.delegate = self
             cell.setup(with: content, mute: mute)
             return cell
+        } else if let box = posts[indexPath.row] as? IBoxPost {
+            let cell: FeedBoxTableViewCell = tableView.dequeueReusableCell(for: indexPath)
+            cell.setup(with: box)
+            return cell
         }
-//        } else if let box = posts[indexPath.row] as? IBoxPost {
-//            let cell: FeedBoxTableViewCell = tableView.dequeueReusableCell(for: indexPath)
-//            cell.setup(with: box)
-//            return cell
-//        } else {
-//
-//        }
         return UITableViewCell()
     }
     

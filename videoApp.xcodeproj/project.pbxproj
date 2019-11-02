@@ -15,13 +15,9 @@
 		0319067E2359D7B7001CA6CA /* ServiceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0319067D2359D7B7001CA6CA /* ServiceProvider.swift */; };
 		031906802359D890001CA6CA /* PostsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0319067F2359D890001CA6CA /* PostsService.swift */; };
 		031906822359D89E001CA6CA /* BoxesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031906812359D89E001CA6CA /* BoxesService.swift */; };
-		031906842359D8CF001CA6CA /* CommentsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031906832359D8CF001CA6CA /* CommentsService.swift */; };
-		0319068A2359D91E001CA6CA /* SharesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031906892359D91E001CA6CA /* SharesService.swift */; };
 		0319068C2359D9AD001CA6CA /* BasicService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0319068B2359D9AD001CA6CA /* BasicService.swift */; };
 		0319068E2359D9D7001CA6CA /* IPostsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0319068D2359D9D7001CA6CA /* IPostsService.swift */; };
 		031906912359D9F9001CA6CA /* IBoxesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031906902359D9F9001CA6CA /* IBoxesService.swift */; };
-		031906942359DA2B001CA6CA /* ICommentsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031906932359DA2B001CA6CA /* ICommentsService.swift */; };
-		0319069D2359DA9E001CA6CA /* ISharesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0319069C2359DA9E001CA6CA /* ISharesService.swift */; };
 		03225D5A2365AC6E00025B29 /* Closures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03225D592365AC6E00025B29 /* Closures.swift */; };
 		03225D5C2365ED6E00025B29 /* DataRequest+Logs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03225D5B2365ED6E00025B29 /* DataRequest+Logs.swift */; };
 		03225D602365F45400025B29 /* FeedBoxTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03225D5F2365F45400025B29 /* FeedBoxTableViewCell.xib */; };
@@ -64,13 +60,9 @@
 		0319067D2359D7B7001CA6CA /* ServiceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceProvider.swift; sourceTree = "<group>"; };
 		0319067F2359D890001CA6CA /* PostsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsService.swift; sourceTree = "<group>"; };
 		031906812359D89E001CA6CA /* BoxesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxesService.swift; sourceTree = "<group>"; };
-		031906832359D8CF001CA6CA /* CommentsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsService.swift; sourceTree = "<group>"; };
-		031906892359D91E001CA6CA /* SharesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharesService.swift; sourceTree = "<group>"; };
 		0319068B2359D9AD001CA6CA /* BasicService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicService.swift; sourceTree = "<group>"; };
 		0319068D2359D9D7001CA6CA /* IPostsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPostsService.swift; sourceTree = "<group>"; };
 		031906902359D9F9001CA6CA /* IBoxesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IBoxesService.swift; sourceTree = "<group>"; };
-		031906932359DA2B001CA6CA /* ICommentsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICommentsService.swift; sourceTree = "<group>"; };
-		0319069C2359DA9E001CA6CA /* ISharesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ISharesService.swift; sourceTree = "<group>"; };
 		03225D592365AC6E00025B29 /* Closures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Closures.swift; sourceTree = "<group>"; };
 		03225D5B2365ED6E00025B29 /* DataRequest+Logs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DataRequest+Logs.swift"; sourceTree = "<group>"; };
 		03225D5F2365F45400025B29 /* FeedBoxTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedBoxTableViewCell.xib; sourceTree = "<group>"; };
@@ -205,10 +197,9 @@
 		0319067B2359D6F1001CA6CA /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				03607E41236C6966009EEB68 /* Auth */,
 				0319068F2359D9DF001CA6CA /* Posts */,
 				031906922359DA04001CA6CA /* Boxes */,
-				031906952359DA3C001CA6CA /* Comments */,
-				0319069E2359DAA6001CA6CA /* Shares */,
 				0319068B2359D9AD001CA6CA /* BasicService.swift */,
 				03225D5B2365ED6E00025B29 /* DataRequest+Logs.swift */,
 			);
@@ -241,22 +232,11 @@
 			path = Boxes;
 			sourceTree = "<group>";
 		};
-		031906952359DA3C001CA6CA /* Comments */ = {
+		03607E41236C6966009EEB68 /* Auth */ = {
 			isa = PBXGroup;
 			children = (
-				031906832359D8CF001CA6CA /* CommentsService.swift */,
-				031906932359DA2B001CA6CA /* ICommentsService.swift */,
 			);
-			path = Comments;
-			sourceTree = "<group>";
-		};
-		0319069E2359DAA6001CA6CA /* Shares */ = {
-			isa = PBXGroup;
-			children = (
-				031906892359D91E001CA6CA /* SharesService.swift */,
-				0319069C2359DA9E001CA6CA /* ISharesService.swift */,
-			);
-			path = Shares;
+			path = Auth;
 			sourceTree = "<group>";
 		};
 		03CBD211235ACF50001E1FFD /* Post */ = {
@@ -498,7 +478,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				03CBD228235B2561001E1FFD /* FeedPresentationModelProtocols.swift in Sources */,
-				0319069D2359DA9E001CA6CA /* ISharesService.swift in Sources */,
 				03CBD20C235ACF16001E1FFD /* IPost.swift in Sources */,
 				03CBD22A235B2561001E1FFD /* FeedViewController.swift in Sources */,
 				031906802359D890001CA6CA /* PostsService.swift in Sources */,
@@ -506,7 +485,6 @@
 				03CBD227235B2561001E1FFD /* FeedPresentationModel.swift in Sources */,
 				03CBD20E235ACF2C001E1FFD /* IContentPost.swift in Sources */,
 				03CBD210235ACF46001E1FFD /* IBoxPost.swift in Sources */,
-				031906942359DA2B001CA6CA /* ICommentsService.swift in Sources */,
 				03DC3D1C235DE3DE009EC246 /* ASVideoPlayerController.swift in Sources */,
 				031906822359D89E001CA6CA /* BoxesService.swift in Sources */,
 				03CBD213235ACF6D001E1FFD /* ContentPost.swift in Sources */,
@@ -524,13 +502,11 @@
 				03225D5C2365ED6E00025B29 /* DataRequest+Logs.swift in Sources */,
 				031906612359D576001CA6CA /* AppDelegate.swift in Sources */,
 				031906632359D576001CA6CA /* SceneDelegate.swift in Sources */,
-				031906842359D8CF001CA6CA /* CommentsService.swift in Sources */,
 				034BA07E23641D5C009B06FA /* ActionView.swift in Sources */,
 				03225D5A2365AC6E00025B29 /* Closures.swift in Sources */,
 				03CBD20A235ACA15001E1FFD /* AdPost.swift in Sources */,
 				03CBD208235AC210001E1FFD /* VideoSessionManager.swift in Sources */,
 				03CBD234235B2803001E1FFD /* FeedContentTableViewCell.swift in Sources */,
-				0319068A2359D91E001CA6CA /* SharesService.swift in Sources */,
 				03DC3D1B235DE3DE009EC246 /* ASVideoLayerObject.swift in Sources */,
 				03CBD226235B2561001E1FFD /* FeedAssembly.swift in Sources */,
 			);

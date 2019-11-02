@@ -22,8 +22,8 @@ final class ServiceProvider {
 
     public let postService: IPostsService
 
-    
     // MARK: - Properties
+    
     private let sessionManager: SessionManager
     private let sessionManagerCache: SessionManager
     private let configuration: URLSessionConfiguration
@@ -32,10 +32,12 @@ final class ServiceProvider {
     // MARK: - Memory managments
     
     public init()  {
+        
         // SessionManager without cache
         configuration = URLSessionConfiguration.default
         configuration.timeoutIntervalForRequest = Consts.defaultHTTPTimeoutInterval
         sessionManager = VideoSessionManager(configuration: configuration)
+        
         // SessionManager with cache
         configurationCache = URLSessionConfiguration.default
         configurationCache.timeoutIntervalForRequest = Consts.defaultHTTPTimeoutInterval
