@@ -25,7 +25,6 @@ class BoxesService: BasicService, IBoxesService {
                     posts.append(BoxPost(dic: post))
                 }
                 completion(posts)
-                print(obj)
             case .failure(_):
                 print("failure")
                 completion(nil)
@@ -33,22 +32,29 @@ class BoxesService: BasicService, IBoxesService {
         }
         request.resume()
     }
-}
-//"animationUrl":      https:      //media-cont.s3-us-west-1.amazonaws.com/feed/unboxing_win3.mp4,
-//"width":      556,
-//"status":      created,
-//"height":      514,
-//"title":      Open me! I am your reward!,
-//"type":      box,
-//"id":      7b07650e-ac6b-4482-93a6-d248d02086f1,
-//"thumbnailUrl":      https:      //media-cont.s3-us-west-1.amazonaws.com/feed/giftbox3.gif,
-//"created_at":      1572691202532
+    
+    func openBox(userId: String, boxId: String, completion: @escaping ((IBoxPost?) -> Void)) {
+        let urlString = basicURL + Endpoints.boxes.rawValue
+        let url: URL! = URL(string: urlString)
+        let params = ["userId": userId, "boxId": boxId, "action": "open"] as [String : Any]
+        let request = sessionManager.request(url, method: .get,
+                                             parameters: params)
 
-//Boxes(rewards) endpoint:
-//https://api.whatsviralapp.com/v2/boxes?userId=123
-//
-//returns list of boxes for this user.
-//
+        request.log().responseJSON {(response) in
+            switch response.result {
+            case .success(let data):
+                guard let result = data as? [String: Any],
+                let obj = result["Item"] as? [String: Any] else { return }
+                completion(BoxPost(dic: obj))
+                print("success open")
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+        request.resume()
+    }
+}
+
 //Request
 //?userId= uuid of user - REQUIRED
 //

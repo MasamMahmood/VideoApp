@@ -45,6 +45,15 @@ extension BoxesViewController: BoxesViewInput {
         self.posts = posts
         tableView.reloadData()
     }
+    
+    func update(box: IBoxPost, at index: Int) {
+        tableView.beginUpdates()
+        posts.remove(at: index)
+        posts.insert(box, at: index)
+        tableView.reloadRows(at: [IndexPath(row: index, section: 0)], with: .automatic)
+        tableView.endUpdates()
+    }
+
 }
 
 extension BoxesViewController: UITableViewDelegate, UITableViewDataSource {
@@ -61,7 +70,7 @@ extension BoxesViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        viewOutput?.postOpened(postId: posts[indexPath.row].id, index: indexPath.row)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

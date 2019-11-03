@@ -38,6 +38,21 @@
             </objects>
             <point key="canvasLocation" x="-407" y="-157"/>
         </scene>
+        <!--Box View Controller-->
+        <scene sceneID="isy-dx-tLQ">
+            <objects>
+                <viewController id="vgh-Fg-Re4" customClass="BoxViewController" customModule="videoApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="me3-v9-Isd">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="Q9r-62-C6K"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wMG-CT-brp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="396" y="-424"/>
+        </scene>
         <!--Item 1-->
         <scene sceneID="dkG-sa-YBB">
             <objects>

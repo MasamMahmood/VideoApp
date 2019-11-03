@@ -15,7 +15,11 @@ class FeedBoxTableViewCell: UITableViewCell, ICollectionCellFromNib {
     @IBOutlet weak var heightCOnstraint: NSLayoutConstraint!
     
     func setup(with post: IBoxPost) {
-        startImageView.sd_setImage(with: URL(string: post.thumbnailUrl), completed: nil)
+        if post.status == "opened" {
+            startImageView.sd_setImage(with: URL(string: post.prizeUrl ?? ""), completed: nil)
+        } else {
+            startImageView.sd_setImage(with: URL(string: post.thumbnailUrl), completed: nil)
+        }
         heightCOnstraint.constant = countHeight(width: post.width, height: post.height)
     }
 

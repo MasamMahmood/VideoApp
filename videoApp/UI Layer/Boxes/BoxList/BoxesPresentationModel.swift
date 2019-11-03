@@ -22,7 +22,10 @@ class BoxesPresentationModel: IBoxesPresentationModel, BoxesViewOutput {
         })
     }
     
-    func postOpened(postId: String) {
-        
+    func postOpened(postId: String, index: Int) {
+        service.openBox(userId: "niltest", boxId: postId, completion: {[weak self] box in
+            guard let box = box else { return }
+            self?.view.update(box: box, at: index)
+        })
     }
 }

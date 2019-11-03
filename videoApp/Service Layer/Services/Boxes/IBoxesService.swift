@@ -8,4 +8,5 @@
 
 protocol IBoxesService {
     func getBoxes(userId: String, completion: @escaping (([IBoxPost]?) -> Void))
+    func openBox(userId: String, boxId: String, completion: @escaping ((IBoxPost?) -> Void))
 }

@@ -28,6 +28,12 @@
 		03607E45236D9589009EEB68 /* BoxesPresentationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03607E44236D9589009EEB68 /* BoxesPresentationModel.swift */; };
 		03607E47236DC183009EEB68 /* BoxesViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03607E46236DC183009EEB68 /* BoxesViewProtocol.swift */; };
 		03607E49236DC27D009EEB68 /* IBoxesPresentationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03607E48236DC27D009EEB68 /* IBoxesPresentationModel.swift */; };
+		03607E4D236EB76D009EEB68 /* BoxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03607E4C236EB76D009EEB68 /* BoxViewController.swift */; };
+		03607E4F236EB784009EEB68 /* BoxViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03607E4E236EB784009EEB68 /* BoxViewProtocol.swift */; };
+		03607E51236EB7A4009EEB68 /* BoxPresentationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03607E50236EB7A4009EEB68 /* BoxPresentationModel.swift */; };
+		03607E53236EB7D2009EEB68 /* IBoxPresentationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03607E52236EB7D2009EEB68 /* IBoxPresentationModel.swift */; };
+		03607E55236EB7E4009EEB68 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03607E54236EB7E4009EEB68 /* Router.swift */; };
+		03607E57236EBA19009EEB68 /* Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03607E56236EBA19009EEB68 /* Storyboard.swift */; };
 		03CBD208235AC210001E1FFD /* VideoSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CBD207235AC210001E1FFD /* VideoSessionManager.swift */; };
 		03CBD20A235ACA15001E1FFD /* AdPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CBD209235ACA15001E1FFD /* AdPost.swift */; };
 		03CBD20C235ACF16001E1FFD /* IPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CBD20B235ACF16001E1FFD /* IPost.swift */; };
@@ -77,6 +83,12 @@
 		03607E44236D9589009EEB68 /* BoxesPresentationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxesPresentationModel.swift; sourceTree = "<group>"; };
 		03607E46236DC183009EEB68 /* BoxesViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxesViewProtocol.swift; sourceTree = "<group>"; };
 		03607E48236DC27D009EEB68 /* IBoxesPresentationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IBoxesPresentationModel.swift; sourceTree = "<group>"; };
+		03607E4C236EB76D009EEB68 /* BoxViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxViewController.swift; sourceTree = "<group>"; };
+		03607E4E236EB784009EEB68 /* BoxViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxViewProtocol.swift; sourceTree = "<group>"; };
+		03607E50236EB7A4009EEB68 /* BoxPresentationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxPresentationModel.swift; sourceTree = "<group>"; };
+		03607E52236EB7D2009EEB68 /* IBoxPresentationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IBoxPresentationModel.swift; sourceTree = "<group>"; };
+		03607E54236EB7E4009EEB68 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		03607E56236EBA19009EEB68 /* Storyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboard.swift; sourceTree = "<group>"; };
 		03CBD207235AC210001E1FFD /* VideoSessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoSessionManager.swift; sourceTree = "<group>"; };
 		03CBD209235ACA15001E1FFD /* AdPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdPost.swift; sourceTree = "<group>"; };
 		03CBD20B235ACF16001E1FFD /* IPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPost.swift; sourceTree = "<group>"; };
@@ -170,6 +182,7 @@
 				031906792359D6CB001CA6CA /* Boxes */,
 				031906782359D6C3001CA6CA /* Auth */,
 				031906772359D6BD001CA6CA /* Video */,
+				03607E54236EB7E4009EEB68 /* Router.swift */,
 			);
 			path = "UI Layer";
 			sourceTree = "<group>";
@@ -191,10 +204,8 @@
 		031906792359D6CB001CA6CA /* Boxes */ = {
 			isa = PBXGroup;
 			children = (
-				03607E46236DC183009EEB68 /* BoxesViewProtocol.swift */,
-				03607E42236D9573009EEB68 /* BoxesViewController.swift */,
-				03607E48236DC27D009EEB68 /* IBoxesPresentationModel.swift */,
-				03607E44236D9589009EEB68 /* BoxesPresentationModel.swift */,
+				03607E4B236EB750009EEB68 /* BoxList */,
+				03607E4A236EB742009EEB68 /* Box */,
 			);
 			path = Boxes;
 			sourceTree = "<group>";
@@ -249,6 +260,28 @@
 			children = (
 			);
 			path = Auth;
+			sourceTree = "<group>";
+		};
+		03607E4A236EB742009EEB68 /* Box */ = {
+			isa = PBXGroup;
+			children = (
+				03607E4E236EB784009EEB68 /* BoxViewProtocol.swift */,
+				03607E4C236EB76D009EEB68 /* BoxViewController.swift */,
+				03607E50236EB7A4009EEB68 /* BoxPresentationModel.swift */,
+				03607E52236EB7D2009EEB68 /* IBoxPresentationModel.swift */,
+			);
+			path = Box;
+			sourceTree = "<group>";
+		};
+		03607E4B236EB750009EEB68 /* BoxList */ = {
+			isa = PBXGroup;
+			children = (
+				03607E46236DC183009EEB68 /* BoxesViewProtocol.swift */,
+				03607E42236D9573009EEB68 /* BoxesViewController.swift */,
+				03607E48236DC27D009EEB68 /* IBoxesPresentationModel.swift */,
+				03607E44236D9589009EEB68 /* BoxesPresentationModel.swift */,
+			);
+			path = BoxList;
 			sourceTree = "<group>";
 		};
 		03CBD211235ACF50001E1FFD /* Post */ = {
@@ -339,6 +372,7 @@
 				03DC3D15235CA15D009EC246 /* TableViewHelper.swift */,
 				034BA081236435D1009B06FA /* ViewFromNib.swift */,
 				03225D592365AC6E00025B29 /* Closures.swift */,
+				03607E56236EBA19009EEB68 /* Storyboard.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -489,18 +523,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03607E55236EB7E4009EEB68 /* Router.swift in Sources */,
 				03CBD228235B2561001E1FFD /* FeedPresentationModelProtocols.swift in Sources */,
 				03607E43236D9573009EEB68 /* BoxesViewController.swift in Sources */,
+				03607E4F236EB784009EEB68 /* BoxViewProtocol.swift in Sources */,
 				03CBD20C235ACF16001E1FFD /* IPost.swift in Sources */,
 				03CBD22A235B2561001E1FFD /* FeedViewController.swift in Sources */,
 				031906802359D890001CA6CA /* PostsService.swift in Sources */,
 				0319067E2359D7B7001CA6CA /* ServiceProvider.swift in Sources */,
 				03CBD227235B2561001E1FFD /* FeedPresentationModel.swift in Sources */,
 				03CBD20E235ACF2C001E1FFD /* IContentPost.swift in Sources */,
+				03607E57236EBA19009EEB68 /* Storyboard.swift in Sources */,
 				03CBD210235ACF46001E1FFD /* IBoxPost.swift in Sources */,
 				03DC3D1C235DE3DE009EC246 /* ASVideoPlayerController.swift in Sources */,
 				03607E47236DC183009EEB68 /* BoxesViewProtocol.swift in Sources */,
 				031906822359D89E001CA6CA /* BoxesService.swift in Sources */,
+				03607E53236EB7D2009EEB68 /* IBoxPresentationModel.swift in Sources */,
 				03607E45236D9589009EEB68 /* BoxesPresentationModel.swift in Sources */,
 				03607E49236DC27D009EEB68 /* IBoxesPresentationModel.swift in Sources */,
 				03CBD213235ACF6D001E1FFD /* ContentPost.swift in Sources */,
@@ -519,9 +557,11 @@
 				031906612359D576001CA6CA /* AppDelegate.swift in Sources */,
 				031906632359D576001CA6CA /* SceneDelegate.swift in Sources */,
 				034BA07E23641D5C009B06FA /* ActionView.swift in Sources */,
+				03607E51236EB7A4009EEB68 /* BoxPresentationModel.swift in Sources */,
 				03225D5A2365AC6E00025B29 /* Closures.swift in Sources */,
 				03CBD20A235ACA15001E1FFD /* AdPost.swift in Sources */,
 				03CBD208235AC210001E1FFD /* VideoSessionManager.swift in Sources */,
+				03607E4D236EB76D009EEB68 /* BoxViewController.swift in Sources */,
 				03CBD234235B2803001E1FFD /* FeedContentTableViewCell.swift in Sources */,
 				03DC3D1B235DE3DE009EC246 /* ASVideoLayerObject.swift in Sources */,
 				03CBD226235B2561001E1FFD /* FeedAssembly.swift in Sources */,

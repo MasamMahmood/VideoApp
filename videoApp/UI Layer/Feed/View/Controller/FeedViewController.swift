@@ -132,6 +132,12 @@ extension FeedViewController: UITableViewDelegate, UITableViewDataSource, UITabl
         return UITableViewCell()
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if posts[indexPath.row] is IBoxPost {
+            tabBarController?.selectedIndex = 1
+        }
+    }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }

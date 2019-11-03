@@ -10,9 +10,10 @@ import UIKit
 
 protocol BoxesViewInput: class {
     func feedRecieved(posts: [IBoxPost]?)
+    func update(box: IBoxPost, at index: Int)
 }
 
 protocol BoxesViewOutput: class {
     func feedRequested()
-    func postOpened(postId: String)
+    func postOpened(postId: String, index: Int)
 }
