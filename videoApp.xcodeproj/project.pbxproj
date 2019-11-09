@@ -56,6 +56,10 @@
 		03DC3D1B235DE3DE009EC246 /* ASVideoLayerObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DC3D18235DE3DE009EC246 /* ASVideoLayerObject.swift */; };
 		03DC3D1C235DE3DE009EC246 /* ASVideoPlayerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DC3D19235DE3DE009EC246 /* ASVideoPlayerController.swift */; };
 		03DC3D1D235DE3DE009EC246 /* ASVideoContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DC3D1A235DE3DE009EC246 /* ASVideoContainer.swift */; };
+		03F7F57F23769AC800352B52 /* CommentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F7F57E23769AC800352B52 /* CommentsViewController.swift */; };
+		03F7F58123769AE700352B52 /* CommentsViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F7F58023769AE700352B52 /* CommentsViewProtocol.swift */; };
+		03F7F58323769C3800352B52 /* CommentsPresentationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F7F58223769C3800352B52 /* CommentsPresentationModel.swift */; };
+		03F7F58523769C4D00352B52 /* ICommentsPresentationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F7F58423769C4D00352B52 /* ICommentsPresentationModel.swift */; };
 		FACA396843E4061581234D83 /* Pods_videoApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2468ED921B45B3F4DD66CD1D /* Pods_videoApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -111,6 +115,10 @@
 		03DC3D18235DE3DE009EC246 /* ASVideoLayerObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ASVideoLayerObject.swift; sourceTree = "<group>"; };
 		03DC3D19235DE3DE009EC246 /* ASVideoPlayerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ASVideoPlayerController.swift; sourceTree = "<group>"; };
 		03DC3D1A235DE3DE009EC246 /* ASVideoContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ASVideoContainer.swift; sourceTree = "<group>"; };
+		03F7F57E23769AC800352B52 /* CommentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsViewController.swift; sourceTree = "<group>"; };
+		03F7F58023769AE700352B52 /* CommentsViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsViewProtocol.swift; sourceTree = "<group>"; };
+		03F7F58223769C3800352B52 /* CommentsPresentationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsPresentationModel.swift; sourceTree = "<group>"; };
+		03F7F58423769C4D00352B52 /* ICommentsPresentationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICommentsPresentationModel.swift; sourceTree = "<group>"; };
 		2468ED921B45B3F4DD66CD1D /* Pods_videoApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_videoApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D54DE6D9D9D9E927B582868 /* Pods-videoApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-videoApp.debug.xcconfig"; path = "Target Support Files/Pods-videoApp/Pods-videoApp.debug.xcconfig"; sourceTree = "<group>"; };
 		BF1EAE35D74262E5AD5C7FC5 /* Pods-videoApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-videoApp.release.xcconfig"; path = "Target Support Files/Pods-videoApp/Pods-videoApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -213,6 +221,10 @@
 		0319067A2359D6E1001CA6CA /* Comments */ = {
 			isa = PBXGroup;
 			children = (
+				03F7F57E23769AC800352B52 /* CommentsViewController.swift */,
+				03F7F58023769AE700352B52 /* CommentsViewProtocol.swift */,
+				03F7F58223769C3800352B52 /* CommentsPresentationModel.swift */,
+				03F7F58423769C4D00352B52 /* ICommentsPresentationModel.swift */,
 			);
 			path = Comments;
 			sourceTree = "<group>";
@@ -532,6 +544,7 @@
 				031906802359D890001CA6CA /* PostsService.swift in Sources */,
 				0319067E2359D7B7001CA6CA /* ServiceProvider.swift in Sources */,
 				03CBD227235B2561001E1FFD /* FeedPresentationModel.swift in Sources */,
+				03F7F57F23769AC800352B52 /* CommentsViewController.swift in Sources */,
 				03CBD20E235ACF2C001E1FFD /* IContentPost.swift in Sources */,
 				03607E57236EBA19009EEB68 /* Storyboard.swift in Sources */,
 				03CBD210235ACF46001E1FFD /* IBoxPost.swift in Sources */,
@@ -550,6 +563,7 @@
 				03CBD225235B2561001E1FFD /* FeedEntity.swift in Sources */,
 				03CBD237235B295E001E1FFD /* FeedBoxTableViewCell.swift in Sources */,
 				03CBD215235ACF78001E1FFD /* BoxPost.swift in Sources */,
+				03F7F58323769C3800352B52 /* CommentsPresentationModel.swift in Sources */,
 				034BA082236435D1009B06FA /* ViewFromNib.swift in Sources */,
 				03DC3D16235CA15D009EC246 /* TableViewHelper.swift in Sources */,
 				0319068C2359D9AD001CA6CA /* BasicService.swift in Sources */,
@@ -562,8 +576,10 @@
 				03CBD20A235ACA15001E1FFD /* AdPost.swift in Sources */,
 				03CBD208235AC210001E1FFD /* VideoSessionManager.swift in Sources */,
 				03607E4D236EB76D009EEB68 /* BoxViewController.swift in Sources */,
+				03F7F58123769AE700352B52 /* CommentsViewProtocol.swift in Sources */,
 				03CBD234235B2803001E1FFD /* FeedContentTableViewCell.swift in Sources */,
 				03DC3D1B235DE3DE009EC246 /* ASVideoLayerObject.swift in Sources */,
+				03F7F58523769C4D00352B52 /* ICommentsPresentationModel.swift in Sources */,
 				03CBD226235B2561001E1FFD /* FeedAssembly.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -716,7 +732,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = ovorona.videoApp;
+				PRODUCT_BUNDLE_IDENTIFIER = audience.videoApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -735,7 +751,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = ovorona.videoApp;
+				PRODUCT_BUNDLE_IDENTIFIER = audience.videoApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

@@ -7,3 +7,11 @@
 //
 
 import Foundation
+
+protocol BoxViewInput: class {
+    func update(box: IBoxPost, at index: Int)
+}
+
+protocol BoxViewOutput: class {
+    func postOpened(postId: String, index: Int)
+}
