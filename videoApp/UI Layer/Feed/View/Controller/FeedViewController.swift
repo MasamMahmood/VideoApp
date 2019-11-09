@@ -18,7 +18,8 @@ class FeedViewController: UIViewController {
     private var mute: Bool {
         return ASVideoPlayerController.sharedVideoPlayer.mute
     }
-    
+    private let router = Router()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
@@ -175,8 +176,8 @@ extension FeedViewController: FeedContentCellDelegate {
         viewOutput?.postLiked(postId:id)
     }
     
-    func commentPressed(id: String) {
-        
+    func commentPressed(post: IContentPost) {
+        router.openComments(vc: self, post: post)
     }
     
     func sharePressed(id: String) {

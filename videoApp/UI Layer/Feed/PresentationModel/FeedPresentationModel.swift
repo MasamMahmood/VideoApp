@@ -11,12 +11,12 @@ import Foundation
 
 final class FeedPresentationModel: FeedPresentationModelInterface {
    
-    internal var view: FeedViewInput
-    internal var service: IPostsService
+    var view: FeedViewInput
+    var service: IPostsService
 
     private var loadInProgress: Bool = false
     private var pullInProgress: Bool = false
-
+    
     private var lastId: String? = nil
     private let pageSize = 20
     private var posts: [IPost] = []

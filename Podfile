@@ -9,5 +9,6 @@ target 'videoApp' do
   pod 'Alamofire', '4.9.0'
   pod 'Player', '~> 0.13.0'
   pod 'SDWebImage', '~> 5.0'
+  pod 'FloatingPanel', '1.7.0'
 
 end

@@ -12,7 +12,7 @@ import AVFoundation
 
 protocol FeedContentCellDelegate: NSObjectProtocol {
     func likePressed(id: String)
-    func commentPressed(id: String)
+    func commentPressed(post: IContentPost)
     func sharePressed(id: String)
     func mutePressed()
 }
@@ -121,7 +121,7 @@ final class FeedContentTableViewCell: UITableViewCell, ICollectionCellFromNib, A
         actionsContainer.addArrangedSubview(likes)
         
         let comments: ActionView = ActionView.loadFromXib()
-        comments.setup(type: .comments, counter: post.commentsCount, action: {[weak self] in self?.delegate?.commentPressed(id: post.id) })
+        comments.setup(type: .comments, counter: post.commentsCount, action: {[weak self] in self?.delegate?.commentPressed(post: post) })
         actionsContainer.addArrangedSubview(comments)
         
         let shares: ActionView = ActionView.loadFromXib()

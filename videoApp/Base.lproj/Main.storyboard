@@ -51,7 +51,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wMG-CT-brp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="396" y="-424"/>
+            <point key="canvasLocation" x="539" y="-157"/>
         </scene>
         <!--Item 1-->
         <scene sceneID="dkG-sa-YBB">
@@ -101,6 +101,59 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="on0-IV-GOf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1324" y="-482"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="fFl-wN-7Oh">
+            <objects>
+                <navigationController id="XbA-On-au7" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="gBY-V7-IKn">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="DiQ-oT-CpT" kind="relationship" relationship="rootViewController" id="z1q-wM-dyj"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="i8m-oR-vvP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="599" y="-806"/>
+        </scene>
+        <!--Comments View Controller-->
+        <scene sceneID="ed1-ei-1Vh">
+            <objects>
+                <viewController storyboardIdentifier="CommentsViewController" id="DiQ-oT-CpT" customClass="CommentsViewController" customModule="videoApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cTq-Uc-8fn">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="0QE-L6-Llm"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="FfC-7X-SUg">
+                        <barButtonItem key="leftBarButtonItem" style="plain" systemItem="stop" id="1oy-45-SMt">
+                            <connections>
+                                <action selector="dismissAction:" destination="DiQ-oT-CpT" id="XR9-Hd-7SD"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aSK-5X-00b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1454" y="-806"/>
+        </scene>
+        <!--Bottom Sheet View Controller-->
+        <scene sceneID="DAc-fS-VbS">
+            <objects>
+                <viewController storyboardIdentifier="BottomSheetViewController" id="d1I-HC-XHh" customClass="BottomSheetViewController" customModule="videoApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="SAO-so-2eW">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="Bhj-TO-TGL"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="K98-Bl-I6o" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2270" y="-787"/>
         </scene>
     </scenes>
 </document>
