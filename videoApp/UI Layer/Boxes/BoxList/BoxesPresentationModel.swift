@@ -8,7 +8,7 @@
 
 import Foundation
 
-class BoxesPresentationModel: IBoxesPresentationModel, BoxesViewOutput {
+class BoxesPresentationModel: BoxesViewOutput {
     var view: BoxesViewInput
     private var service: IBoxesService = ServiceProvider.instance.boxService
 

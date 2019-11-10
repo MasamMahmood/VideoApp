@@ -9,7 +9,7 @@
 // MARK: - Stored Properties
 import Foundation
 
-final class FeedPresentationModel: FeedPresentationModelInterface {
+final class FeedPresentationModel {
    
     var view: FeedViewInput
     var service: IPostsService

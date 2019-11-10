@@ -14,13 +14,11 @@ class Router {
     }
     
     func openComments(vc: UIViewController?, post: IContentPost) {
-//        if let comments: CommentsViewController = Storyboard.load(from: .main, identifier: "CommentsViewController") as? CommentsViewController {
-            let comments = BottomSheetViewController()
-            let nvc = UINavigationController()
-            nvc.modalPresentationStyle = .fullScreen
-            nvc.viewControllers = [comments]
-            vc?.show(nvc, sender: nil)
-//        }
+        if let comments: CommentsViewController = Storyboard.load(from: .main, identifier: "CommentsViewController") as? CommentsViewController {
+            comments.post = post
+            comments.modalPresentationStyle = .fullScreen
+            vc?.show(comments, sender: nil)
+        }
     }
     
 }

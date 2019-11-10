@@ -7,3 +7,12 @@
 //
 
 import Foundation
+
+protocol CommentsViewInput: class {
+}
+
+protocol CommentsViewOutput: class {
+    func postLiked(postId: String)
+    func postShared(postId: String)
+    func postViewed(postId: String)
+}

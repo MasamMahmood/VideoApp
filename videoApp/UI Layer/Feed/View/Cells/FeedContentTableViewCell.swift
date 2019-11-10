@@ -65,6 +65,7 @@ final class FeedContentTableViewCell: UITableViewCell, ICollectionCellFromNib, A
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var videoHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var audioButton: UIButton!
+    @IBOutlet weak var topConstraint: NSLayoutConstraint!
     
     //MARK: - Cell
 
@@ -87,7 +88,8 @@ final class FeedContentTableViewCell: UITableViewCell, ICollectionCellFromNib, A
         videoLayer.frame = CGRect(x: 0, y: 0, width: superview?.frame.width ?? 0, height: videoHeightConstraint.constant)
     }
     
-    func setup(with post: IContentPost, mute: Bool) {
+    func setup(with post: IContentPost, mute: Bool, needTopInset: Bool) {
+        topConstraint.constant = needTopInset ? topConstraint.constant : 0
         postId = post.id
         videoURL = post.postUrl
         titleLabel.text = post.title
