@@ -16,6 +16,8 @@ final class CommentsViewController: UIViewController, CommentsViewInput, Floatin
     private var mute: Bool {
         return ASVideoPlayerController.sharedVideoPlayer.mute
     }
+    private weak var contentVC: BottomSheetInputView?
+    private let router = Router()
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -34,17 +36,21 @@ final class CommentsViewController: UIViewController, CommentsViewInput, Floatin
     }
     
     private func setup() {
-        let presenter = CommentsPresentationModel(view: self,
-                                              service: ServiceProvider.instance.postService)
+        let presenter = CommentsPresentationModel(view: self, post: post)
         self.output = presenter
         setupTableView()
         setupPanel()
+        output?.getComments() { [weak self] comments in
+            guard let comments = comments else { return }
+            self?.contentVC?.updateComments(with: comments)
+        }
     }
     
     private func setupPanel() {
         fpc = FloatingPanelController()
         fpc.delegate = self // Optional
-        let contentVC = BottomSheetViewController()
+        let contentVC = router.bottomVC()
+        self.contentVC = contentVC
         fpc.set(contentViewController: contentVC)
         fpc.track(scrollView: contentVC.tableView)
         fpc.addPanel(toParent: self)

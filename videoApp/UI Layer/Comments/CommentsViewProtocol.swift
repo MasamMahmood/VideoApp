@@ -15,4 +15,6 @@ protocol CommentsViewOutput: class {
     func postLiked(postId: String)
     func postShared(postId: String)
     func postViewed(postId: String)
+    func commentSent(text: String)
+    func getComments(completion: (([IComment]?) -> Void)?)
 }

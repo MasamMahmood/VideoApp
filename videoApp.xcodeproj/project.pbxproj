@@ -55,7 +55,12 @@
 		03DC3D1C235DE3DE009EC246 /* ASVideoPlayerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DC3D19235DE3DE009EC246 /* ASVideoPlayerController.swift */; };
 		03DC3D1D235DE3DE009EC246 /* ASVideoContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DC3D1A235DE3DE009EC246 /* ASVideoContainer.swift */; };
 		03F1A4BB2376CCF000768A59 /* BottomSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F1A4BA2376CCF000768A59 /* BottomSheetViewController.swift */; };
-		03F1A4BD237712B000768A59 /* CardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F1A4BC237712B000768A59 /* CardViewController.swift */; };
+		03F1A4C023784E7B00768A59 /* CommentsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F1A4BF23784E7B00768A59 /* CommentsService.swift */; };
+		03F1A4C223784E8A00768A59 /* ICommentsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F1A4C123784E8A00768A59 /* ICommentsService.swift */; };
+		03F1A4C52378501D00768A59 /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F1A4C32378501D00768A59 /* CommentCell.swift */; };
+		03F1A4C62378501D00768A59 /* CommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03F1A4C42378501D00768A59 /* CommentCell.xib */; };
+		03F1A4C9237854EB00768A59 /* IComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F1A4C8237854EB00768A59 /* IComment.swift */; };
+		03F1A4CB2378550100768A59 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F1A4CA2378550100768A59 /* Comment.swift */; };
 		03F7F57F23769AC800352B52 /* CommentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F7F57E23769AC800352B52 /* CommentsViewController.swift */; };
 		03F7F58123769AE700352B52 /* CommentsViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F7F58023769AE700352B52 /* CommentsViewProtocol.swift */; };
 		03F7F58323769C3800352B52 /* CommentsPresentationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F7F58223769C3800352B52 /* CommentsPresentationModel.swift */; };
@@ -113,7 +118,12 @@
 		03DC3D19235DE3DE009EC246 /* ASVideoPlayerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ASVideoPlayerController.swift; sourceTree = "<group>"; };
 		03DC3D1A235DE3DE009EC246 /* ASVideoContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ASVideoContainer.swift; sourceTree = "<group>"; };
 		03F1A4BA2376CCF000768A59 /* BottomSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetViewController.swift; sourceTree = "<group>"; };
-		03F1A4BC237712B000768A59 /* CardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewController.swift; sourceTree = "<group>"; };
+		03F1A4BF23784E7B00768A59 /* CommentsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsService.swift; sourceTree = "<group>"; };
+		03F1A4C123784E8A00768A59 /* ICommentsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICommentsService.swift; sourceTree = "<group>"; };
+		03F1A4C32378501D00768A59 /* CommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
+		03F1A4C42378501D00768A59 /* CommentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentCell.xib; sourceTree = "<group>"; };
+		03F1A4C8237854EB00768A59 /* IComment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IComment.swift; sourceTree = "<group>"; };
+		03F1A4CA2378550100768A59 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		03F7F57E23769AC800352B52 /* CommentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsViewController.swift; sourceTree = "<group>"; };
 		03F7F58023769AE700352B52 /* CommentsViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsViewProtocol.swift; sourceTree = "<group>"; };
 		03F7F58223769C3800352B52 /* CommentsPresentationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsPresentationModel.swift; sourceTree = "<group>"; };
@@ -221,9 +231,10 @@
 			children = (
 				03F7F57E23769AC800352B52 /* CommentsViewController.swift */,
 				03F7F58023769AE700352B52 /* CommentsViewProtocol.swift */,
-				03F1A4BA2376CCF000768A59 /* BottomSheetViewController.swift */,
 				03F7F58223769C3800352B52 /* CommentsPresentationModel.swift */,
-				03F1A4BC237712B000768A59 /* CardViewController.swift */,
+				03F1A4BA2376CCF000768A59 /* BottomSheetViewController.swift */,
+				03F1A4C32378501D00768A59 /* CommentCell.swift */,
+				03F1A4C42378501D00768A59 /* CommentCell.xib */,
 			);
 			path = Comments;
 			sourceTree = "<group>";
@@ -231,6 +242,7 @@
 		0319067B2359D6F1001CA6CA /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				03F1A4BE23784E4300768A59 /* Comments */,
 				03607E41236C6966009EEB68 /* Auth */,
 				0319068F2359D9DF001CA6CA /* Posts */,
 				031906922359DA04001CA6CA /* Boxes */,
@@ -243,6 +255,7 @@
 		0319067C2359D6F8001CA6CA /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				03F1A4C7237854D100768A59 /* Comments */,
 				03CBD211235ACF50001E1FFD /* Post */,
 			);
 			path = Entities;
@@ -396,6 +409,24 @@
 			path = VideoPlayLibrary;
 			sourceTree = "<group>";
 		};
+		03F1A4BE23784E4300768A59 /* Comments */ = {
+			isa = PBXGroup;
+			children = (
+				03F1A4BF23784E7B00768A59 /* CommentsService.swift */,
+				03F1A4C123784E8A00768A59 /* ICommentsService.swift */,
+			);
+			path = Comments;
+			sourceTree = "<group>";
+		};
+		03F1A4C7237854D100768A59 /* Comments */ = {
+			isa = PBXGroup;
+			children = (
+				03F1A4C8237854EB00768A59 /* IComment.swift */,
+				03F1A4CA2378550100768A59 /* Comment.swift */,
+			);
+			path = Comments;
+			sourceTree = "<group>";
+		};
 		23191A8342AC8CEFE39B1796 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -476,6 +507,7 @@
 				034BA08023642F14009B06FA /* ActionView.xib in Resources */,
 				03CBD231235B277D001E1FFD /* FeedAdsTableViewCell.xib in Resources */,
 				0319066D2359D578001CA6CA /* LaunchScreen.storyboard in Resources */,
+				03F1A4C62378501D00768A59 /* CommentCell.xib in Resources */,
 				0319066A2359D578001CA6CA /* Assets.xcassets in Resources */,
 				031906682359D576001CA6CA /* Main.storyboard in Resources */,
 				03225D602365F45400025B29 /* FeedBoxTableViewCell.xib in Resources */,
@@ -538,6 +570,7 @@
 				03CBD20C235ACF16001E1FFD /* IPost.swift in Sources */,
 				03CBD22A235B2561001E1FFD /* FeedViewController.swift in Sources */,
 				031906802359D890001CA6CA /* PostsService.swift in Sources */,
+				03F1A4C223784E8A00768A59 /* ICommentsService.swift in Sources */,
 				0319067E2359D7B7001CA6CA /* ServiceProvider.swift in Sources */,
 				03CBD227235B2561001E1FFD /* FeedPresentationModel.swift in Sources */,
 				03F7F57F23769AC800352B52 /* CommentsViewController.swift in Sources */,
@@ -547,6 +580,7 @@
 				03F1A4BB2376CCF000768A59 /* BottomSheetViewController.swift in Sources */,
 				03DC3D1C235DE3DE009EC246 /* ASVideoPlayerController.swift in Sources */,
 				03607E47236DC183009EEB68 /* BoxesViewProtocol.swift in Sources */,
+				03F1A4C023784E7B00768A59 /* CommentsService.swift in Sources */,
 				031906822359D89E001CA6CA /* BoxesService.swift in Sources */,
 				03607E53236EB7D2009EEB68 /* IBoxPresentationModel.swift in Sources */,
 				03607E45236D9589009EEB68 /* BoxesPresentationModel.swift in Sources */,
@@ -554,6 +588,7 @@
 				03CBD229235B2561001E1FFD /* FeedViewProtocols.swift in Sources */,
 				03CBD22F235B2765001E1FFD /* FeedAdsTableViewCell.swift in Sources */,
 				0319068E2359D9D7001CA6CA /* IPostsService.swift in Sources */,
+				03F1A4CB2378550100768A59 /* Comment.swift in Sources */,
 				03DC3D1D235DE3DE009EC246 /* ASVideoContainer.swift in Sources */,
 				031906912359D9F9001CA6CA /* IBoxesService.swift in Sources */,
 				03CBD225235B2561001E1FFD /* FeedEntity.swift in Sources */,
@@ -563,9 +598,11 @@
 				034BA082236435D1009B06FA /* ViewFromNib.swift in Sources */,
 				03DC3D16235CA15D009EC246 /* TableViewHelper.swift in Sources */,
 				0319068C2359D9AD001CA6CA /* BasicService.swift in Sources */,
+				03F1A4C52378501D00768A59 /* CommentCell.swift in Sources */,
 				03225D5C2365ED6E00025B29 /* DataRequest+Logs.swift in Sources */,
 				031906612359D576001CA6CA /* AppDelegate.swift in Sources */,
 				031906632359D576001CA6CA /* SceneDelegate.swift in Sources */,
+				03F1A4C9237854EB00768A59 /* IComment.swift in Sources */,
 				034BA07E23641D5C009B06FA /* ActionView.swift in Sources */,
 				03607E51236EB7A4009EEB68 /* BoxPresentationModel.swift in Sources */,
 				03225D5A2365AC6E00025B29 /* Closures.swift in Sources */,
@@ -574,7 +611,6 @@
 				03607E4D236EB76D009EEB68 /* BoxViewController.swift in Sources */,
 				03F7F58123769AE700352B52 /* CommentsViewProtocol.swift in Sources */,
 				03CBD234235B2803001E1FFD /* FeedContentTableViewCell.swift in Sources */,
-				03F1A4BD237712B000768A59 /* CardViewController.swift in Sources */,
 				03DC3D1B235DE3DE009EC246 /* ASVideoLayerObject.swift in Sources */,
 				03CBD226235B2561001E1FFD /* FeedAssembly.swift in Sources */,
 			);

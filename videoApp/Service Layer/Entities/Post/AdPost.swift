@@ -27,8 +27,9 @@ class Post: IPost {
             self.type = type
             self.width = width
             self.height = height
-            createAt = Date() //,let dateString = dic["created_at"] as? String
+            if let dateString = dic["created_at"] as? Int {
+                self.createAt = Date(timeIntervalSince1970: TimeInterval(dateString/1000))
+            }
         }
-        print(width)
     }
 }

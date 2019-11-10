@@ -9,6 +9,7 @@
 import UIKit
 
 class Router {
+    
     func openBoxScreen(post: IBoxPost) {
         
     }
@@ -18,6 +19,14 @@ class Router {
             comments.post = post
             comments.modalPresentationStyle = .fullScreen
             vc?.show(comments, sender: nil)
+        }
+    }
+    
+    func bottomVC() -> BottomSheetViewController {
+        if let bottom: BottomSheetViewController = Storyboard.load(from: .main, identifier: "BottomSheetViewController") as? BottomSheetViewController {
+            return bottom
+        } else {
+            return BottomSheetViewController()
         }
     }
     

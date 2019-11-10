@@ -22,6 +22,7 @@ final class ServiceProvider {
 
     public let postService: IPostsService
     public let boxService: IBoxesService
+    public let commentsService: ICommentsService
 
     // MARK: - Properties
     
@@ -50,6 +51,7 @@ final class ServiceProvider {
         
         postService = PostsService(sessionManager: sessionManager)
         boxService = BoxesService(sessionManager: sessionManager)
+        commentsService = CommentsService(sessionManager: sessionManager)
     }
 }
 

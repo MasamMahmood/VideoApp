@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol IContentPost: IPost {
+protocol IContentPost: class, IPost {
     var thumbnailUrl: String? { get }
     var postUrl: String { get }
     var commentsCount: Int { get }

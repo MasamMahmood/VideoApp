@@ -10,13 +10,15 @@ import Foundation
 
 class CommentsPresentationModel: CommentsViewOutput {
     
-    var view: CommentsViewInput
-    var service: IPostsService
+    private weak var view: CommentsViewInput?
+    private weak var post: IContentPost?
+    private let service: IPostsService = ServiceProvider.instance.postService
+    private let commentService: ICommentsService = ServiceProvider.instance.commentsService
     
     init(view: CommentsViewInput,
-         service: IPostsService) {
+         post: IContentPost) {
         self.view = view
-        self.service = service
+        self.post = post
     }
     
     func postLiked(postId: String) {
@@ -29,5 +31,13 @@ class CommentsPresentationModel: CommentsViewOutput {
     
     func postViewed(postId: String) {
         service.viewPost(userId: "niltest", postId: postId)
+    }
+    
+    func commentSent(text: String) {
+        
+    }
+    
+    func getComments(completion: (([IComment]?) -> Void)?) {
+        commentService.getComments(postId: post!.id, completion: completion)
     }
 }
