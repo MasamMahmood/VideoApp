@@ -50,6 +50,7 @@ final class CommentsViewController: UIViewController, CommentsViewInput, Floatin
         fpc = FloatingPanelController()
         fpc.delegate = self // Optional
         let contentVC = router.bottomVC()
+        contentVC.delegate = self
         self.contentVC = contentVC
         fpc.set(contentViewController: contentVC)
         fpc.track(scrollView: contentVC.tableView)
@@ -84,6 +85,7 @@ extension CommentsViewController: FeedContentCellDelegate {
     }
     
     func commentPressed(post: IContentPost) {
+        fpc.show(animated: true, completion: nil)
     }
     
     func sharePressed(id: String) {
@@ -98,4 +100,16 @@ extension CommentsViewController: FeedContentCellDelegate {
     func mutePressed() {
         ASVideoPlayerController.sharedVideoPlayer.mute = !mute
     }
+}
+
+extension CommentsViewController: BottomSheetDelegate {
+    func didCloseComments() {
+        fpc.hide(animated: true, completion: nil)
+    }
+    
+    func didWriteComment(text: String) {
+        
+    }
+    
+    
 }

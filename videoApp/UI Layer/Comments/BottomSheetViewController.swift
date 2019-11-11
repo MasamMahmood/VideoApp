@@ -21,6 +21,7 @@ protocol BottomSheetInputView: class {
 final class BottomSheetViewController: UIViewController, BottomSheetInputView {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var commentsLabel: UILabel!
     
     weak var delegate: BottomSheetDelegate?
     private var comments: [IComment]! = []
@@ -32,14 +33,20 @@ final class BottomSheetViewController: UIViewController, BottomSheetInputView {
     
     func updateComments(with: [IComment]) {
         self.comments = with
+        commentsLabel.text = "\(comments.count) comments"
         tableView.reloadData()
     }
-    
+
     private func setupTableView() {
           tableView.delegate = self
           tableView.dataSource = self
           tableView?.registerReusableCell(CommentCell.self)
       }
+    
+    
+    @IBAction func closePressed(_ sender: Any) {
+        delegate?.didCloseComments()
+    }
 }
 
 extension BottomSheetViewController: UITableViewDelegate, UITableViewDataSource {
@@ -51,5 +58,9 @@ extension BottomSheetViewController: UITableViewDelegate, UITableViewDataSource 
         let cell: CommentCell = tableView.dequeueReusableCell(for: indexPath)
         cell.setup(with: comments[indexPath.row])
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
     }
 }

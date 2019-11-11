@@ -8,7 +8,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (= 4.9.0)
-  - FloatingPanel
+  - FloatingPanel (= 1.7.0)
   - Player (~> 0.13.0)
   - SDWebImage (~> 5.0)
 
@@ -25,6 +25,6 @@ SPEC CHECKSUMS:
   Player: 29186e0d557898b0ebdab42d2e1b47e615838156
   SDWebImage: 46a7f73228f84ce80990c786e4372cf4db5875ce
 
-PODFILE CHECKSUM: 8548b579816c7cf83a9c91f1f765180ccb527716
+PODFILE CHECKSUM: d363817193fa5b3549bce94d1208cc7ba85d8f8f
 
 COCOAPODS: 1.8.4
