@@ -7,6 +7,7 @@
 //
 
 import UIKit
+//import Appodeal
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,6 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        //Appodeal.initialize(withApiKey: "3fcda155e7ec35fb21f22fc0f51fd222", types: .interstitial, hasConsent: .random())
         return true
     }
 

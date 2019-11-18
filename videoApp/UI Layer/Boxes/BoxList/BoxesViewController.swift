@@ -70,7 +70,28 @@ extension BoxesViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
         viewOutput?.postOpened(postId: posts[indexPath.row].id, index: indexPath.row)
+        
+        let refreshAlert = UIAlertController(title: "Appodeal", message: "Content will be available after short Ad.", preferredStyle: UIAlertController.Style.alert)
+
+        refreshAlert.addAction(UIAlertAction(title: "Confirm", style: .default, handler: { (action: UIAlertAction!) in
+            self.navigationController?.popToRootViewController(animated: true)
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "BoxViewController") as! BoxViewController
+            vc.boxId = self.posts[indexPath.row].id
+            self.present(vc, animated: true, completion: nil)
+            
+        }))
+
+        refreshAlert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: { (action: UIAlertAction!) in
+        refreshAlert .dismiss(animated: true, completion: nil)
+
+        }))
+
+        self.present(refreshAlert, animated: true, completion: nil)
+        
+        
+        
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

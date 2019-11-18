@@ -26,6 +26,10 @@ class BoxesPresentationModel: BoxesViewOutput {
         service.openBox(userId: "niltest", boxId: postId, completion: {[weak self] box in
             guard let box = box else { return }
             self?.view.update(box: box, at: index)
+            //let vc = BoxViewController()
+            //vc.code = box.prizeType ?? "No prize"
+            //print(box.prizeType)
+        
         })
     }
 }
