@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Toast_Swift
 
 class BoxesViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
@@ -72,29 +73,26 @@ extension BoxesViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         viewOutput?.postOpened(postId: posts[indexPath.row].id, index: indexPath.row)
+       // self.view.makeToast("Content will be available after short Ad.")
         
-        let refreshAlert = UIAlertController(title: "Appodeal", message: "Content will be available after short Ad.", preferredStyle: UIAlertController.Style.alert)
-
-        refreshAlert.addAction(UIAlertAction(title: "Confirm", style: .default, handler: { (action: UIAlertAction!) in
-            self.navigationController?.popToRootViewController(animated: true)
-            let vc = self.storyboard?.instantiateViewController(withIdentifier: "BoxViewController") as! BoxViewController
-            vc.boxId = self.posts[indexPath.row].id
-            self.present(vc, animated: true, completion: nil)
-            
-        }))
-
-        refreshAlert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: { (action: UIAlertAction!) in
-        refreshAlert .dismiss(animated: true, completion: nil)
-
-        }))
-
-        self.present(refreshAlert, animated: true, completion: nil)
+        var style = ToastStyle()
+        style.messageColor = .black
+        style.backgroundColor = .white
+        self.view.makeToast("Your reward will be shown after short ad", duration: 3.0, position: .bottom, style: style)
         
-        
+        _ = Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(fireTimer), userInfo: posts[indexPath.row].id, repeats: false)
         
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }
+    
+    @objc func fireTimer(timer:Timer) {
+        let boxId = timer.userInfo as! String
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "BoxViewController") as! BoxViewController
+        vc.boxId = boxId
+        self.present(vc, animated: true, completion: nil)
+    }
+    
 }

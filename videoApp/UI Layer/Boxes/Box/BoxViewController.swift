@@ -8,6 +8,7 @@
 
 import UIKit
 import AVKit
+import Toast_Swift
 //import Appodeal
 
 class BoxViewController: UIViewController {
@@ -15,8 +16,11 @@ class BoxViewController: UIViewController {
     @IBOutlet weak var imgView: UIImageView!
     @IBOutlet weak var btnLabel: UIButton!
     @IBOutlet weak var containerView: UIView!
+    @IBOutlet weak var viewPlay: VideoView!
     private var service: IBoxesService = ServiceProvider.instance.boxService
     var boxId:String?
+    var player: AVPlayer!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,47 +30,43 @@ class BoxViewController: UIViewController {
             //Appodeal.showAd(.interstitial, forPlacement: box.animationUrl, rootViewController: self!)
             //Appodeal.isReadyForShow(with: .interstitial)
             
-            let avPlayer = AVPlayer(playerItem: AVPlayerItem(url: URL(string: box.animationUrl)!))
-            let avPlayerLayer = AVPlayerLayer(player: avPlayer)
-            avPlayerLayer.frame = self!.containerView.bounds
-            self!.containerView.layer.insertSublayer(avPlayerLayer, at: 0)
-            self!.imgView.isHidden = true
-            avPlayer.play()
-            avPlayer.automaticallyWaitsToMinimizeStalling = false
-            self?.btnLabel.setTitle(box.title, for: .normal)
+            self!.viewPlay.configure(url: box.animationUrl)
+            self?.viewPlay.play()
+            
+            NotificationCenter.default.addObserver(self!, selector: #selector(self!.playerDidFinishPlaying), name: .AVPlayerItemDidPlayToEndTime, object: nil)
+            
+            
                    
         })
         
 
     }
-    @IBAction func backBtn(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
-    }
     
-    @IBAction func openBtn(_ sender: Any) {
-        
+    @objc func playerDidFinishPlaying(note: NSNotification) {
+        print("Video Finished")
         service.openBox(userId: "niltest", boxId: boxId!, completion: {[weak self] box in
             guard let box = box else { return }
-            self!.containerView.isHidden = true
+           // self!.containerView.isHidden = true
             self!.imgView.isHidden = false
             self!.setImage(from: box.prizeUrl!)
-            self?.btnLabel.setTitle(box.status, for: .normal)
+            self!.viewPlay.isHidden = true
             if let code = box.code {
                 if code != " " {
                 UIPasteboard.general.string = box.code
-                let alertController = UIAlertController(title: "Prize Code", message: "Prize code copied", preferredStyle: .alert)
-                let OKAction = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction!) in
-                print("Ok button tapped");
-                    
-                }
-                alertController.addAction(OKAction)
-                self!.present(alertController, animated: true, completion:nil)
+                var style = ToastStyle()
+                style.messageColor = .black
+                style.backgroundColor = .white
+                    self!.view.makeToast("Code Copied", duration: 3.0, position: .bottom, style: style)
                 }
             }
                    
         })
-        
     }
+    
+    @IBAction func backBtn(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
     
     func setImage(from url: String) {
         guard let imageURL = URL(string: url) else { return }
@@ -78,5 +78,5 @@ class BoxViewController: UIViewController {
             }
         }
     }
-    
+
 }

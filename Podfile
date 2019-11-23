@@ -10,6 +10,8 @@ target 'videoApp' do
   pod 'Player', '~> 0.13.0'
   pod 'SDWebImage', '~> 5.0'
   pod 'FloatingPanel', '1.7.0'
+  pod 'Toast-Swift'
+  pod 'VIMediaCache'
   #pod 'Appodeal', '~> 2.5.13'
   #pod 'Appodeal/Interstitial', '~> 2.5.13'
 

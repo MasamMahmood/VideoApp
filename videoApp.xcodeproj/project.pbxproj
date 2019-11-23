@@ -64,6 +64,7 @@
 		03F7F57F23769AC800352B52 /* CommentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F7F57E23769AC800352B52 /* CommentsViewController.swift */; };
 		03F7F58123769AE700352B52 /* CommentsViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F7F58023769AE700352B52 /* CommentsViewProtocol.swift */; };
 		03F7F58323769C3800352B52 /* CommentsPresentationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F7F58223769C3800352B52 /* CommentsPresentationModel.swift */; };
+		D0566C3623894BB800CEA853 /* VideoFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0566C3523894BB800CEA853 /* VideoFile.swift */; };
 		FACA396843E4061581234D83 /* Pods_videoApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2468ED921B45B3F4DD66CD1D /* Pods_videoApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -130,6 +131,7 @@
 		2468ED921B45B3F4DD66CD1D /* Pods_videoApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_videoApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D54DE6D9D9D9E927B582868 /* Pods-videoApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-videoApp.debug.xcconfig"; path = "Target Support Files/Pods-videoApp/Pods-videoApp.debug.xcconfig"; sourceTree = "<group>"; };
 		BF1EAE35D74262E5AD5C7FC5 /* Pods-videoApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-videoApp.release.xcconfig"; path = "Target Support Files/Pods-videoApp/Pods-videoApp.release.xcconfig"; sourceTree = "<group>"; };
+		D0566C3523894BB800CEA853 /* VideoFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoFile.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -395,6 +397,7 @@
 				034BA081236435D1009B06FA /* ViewFromNib.swift */,
 				03225D592365AC6E00025B29 /* Closures.swift */,
 				03607E56236EBA19009EEB68 /* Storyboard.swift */,
+				D0566C3523894BB800CEA853 /* VideoFile.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -589,6 +592,7 @@
 				03CBD22F235B2765001E1FFD /* FeedAdsTableViewCell.swift in Sources */,
 				0319068E2359D9D7001CA6CA /* IPostsService.swift in Sources */,
 				03F1A4CB2378550100768A59 /* Comment.swift in Sources */,
+				D0566C3623894BB800CEA853 /* VideoFile.swift in Sources */,
 				03DC3D1D235DE3DE009EC246 /* ASVideoContainer.swift in Sources */,
 				031906912359D9F9001CA6CA /* IBoxesService.swift in Sources */,
 				03CBD225235B2561001E1FFD /* FeedEntity.swift in Sources */,
