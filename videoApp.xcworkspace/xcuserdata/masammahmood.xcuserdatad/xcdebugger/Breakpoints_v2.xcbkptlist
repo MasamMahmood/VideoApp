@@ -68,5 +68,226 @@
             landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "691AA374-22ED-442D-97F3-CEBC2DB55E41"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "videoApp/UI Layer/Feed/View/Controller/FeedViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "setup()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BD16B1D0-D137-4673-906C-912DDC17CA7F"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "videoApp/UI Layer/Comments/CommentsViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "69"
+            endingLineNumber = "69"
+            landmarkName = "setup()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B98C6AB3-1C4F-454E-A225-1FA1C3739503"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "videoApp/UI Layer/Feed/View/Controller/FeedViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "138"
+            endingLineNumber = "138"
+            landmarkName = "tableView(_:didSelectRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6BC61818-9A8E-4B48-BC94-D046B3C89AD7"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "videoApp/UI Layer/Feed/View/Cells/FeedContentTableViewCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "125"
+            endingLineNumber = "125"
+            landmarkName = "setupActions(post:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E847B382-E99D-4491-8EAC-94C59E1C26FA"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "videoApp/UI Layer/Feed/View/Cells/FeedContentTableViewCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "126"
+            endingLineNumber = "126"
+            landmarkName = "setupActions(post:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "E847B382-E99D-4491-8EAC-94C59E1C26FA - a2d80504b57e"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "videoApp.FeedContentTableViewCell.(setupActions in _9E1DB4E630D672A9FED162D71C015A9F)(post: videoApp.IContentPost) -&gt; ()"
+                  moduleName = "videoApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/masammahmood/repos/video_app/videoApp/UI%20Layer/Feed/View/Cells/FeedContentTableViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "126"
+                  endingLineNumber = "126"
+                  offsetFromSymbolStart = "1545">
+               </Location>
+               <Location
+                  uuid = "E847B382-E99D-4491-8EAC-94C59E1C26FA - a41675088dcc88a5"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 () -&gt; () in videoApp.FeedContentTableViewCell.(setupActions in _9E1DB4E630D672A9FED162D71C015A9F)(post: videoApp.IContentPost) -&gt; ()"
+                  moduleName = "videoApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/masammahmood/repos/video_app/videoApp/UI%20Layer/Feed/View/Cells/FeedContentTableViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "126"
+                  endingLineNumber = "126"
+                  offsetFromSymbolStart = "94">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5768CA0A-B316-4A9D-AB17-DDA1E9669686"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "videoApp/UI Layer/Feed/View/Cells/FeedContentTableViewCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "127"
+            endingLineNumber = "127"
+            landmarkName = "setupActions(post:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C2D0BBD5-5475-4FA8-AAF9-D46835F471AD"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "videoApp/UI Layer/Comments/CommentsViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "11"
+            endingLineNumber = "11"
+            landmarkName = "CommentsViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "C2D0BBD5-5475-4FA8-AAF9-D46835F471AD - 81f05f964ac12ddc"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "videoApp.CommentsViewController.__allocating_init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; videoApp.CommentsViewController"
+                  moduleName = "videoApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/masammahmood/repos/video_app/videoApp/UI%20Layer/Comments/CommentsViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  uuid = "C2D0BBD5-5475-4FA8-AAF9-D46835F471AD - add8612103222eff"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "videoApp.CommentsViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; videoApp.CommentsViewController"
+                  moduleName = "videoApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/masammahmood/repos/video_app/videoApp/UI%20Layer/Comments/CommentsViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "182">
+               </Location>
+               <Location
+                  uuid = "C2D0BBD5-5475-4FA8-AAF9-D46835F471AD - bb040c1be1504bd3"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "videoApp.CommentsViewController.__allocating_init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;videoApp.CommentsViewController&gt;"
+                  moduleName = "videoApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/masammahmood/repos/video_app/videoApp/UI%20Layer/Comments/CommentsViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  uuid = "C2D0BBD5-5475-4FA8-AAF9-D46835F471AD - e024e0f462026e0"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "videoApp.CommentsViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;videoApp.CommentsViewController&gt;"
+                  moduleName = "videoApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/masammahmood/repos/video_app/videoApp/UI%20Layer/Comments/CommentsViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "119">
+               </Location>
+               <Location
+                  uuid = "C2D0BBD5-5475-4FA8-AAF9-D46835F471AD - a653710290446dbc"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "videoApp.CommentsViewController.__deallocating_deinit"
+                  moduleName = "videoApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/masammahmood/repos/video_app/videoApp/UI%20Layer/Comments/CommentsViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

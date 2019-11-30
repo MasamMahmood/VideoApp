@@ -24,6 +24,8 @@ final class CommentsViewController: UIViewController, CommentsViewInput, Floatin
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
+        swipeGesture()
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -33,6 +35,32 @@ final class CommentsViewController: UIViewController, CommentsViewInput, Floatin
     
     @IBAction func dismissAction(_ sender: Any) {
         dismiss(animated: true, completion: nil)
+    }
+    
+    func swipeGesture(){
+        let leftSwipe = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipes(_:)))
+        let rightSwipe = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipes(_:)))
+
+        leftSwipe.direction = .left
+        rightSwipe.direction = .right
+
+        view.addGestureRecognizer(leftSwipe)
+        view.addGestureRecognizer(rightSwipe)
+    }
+    
+    @objc func handleSwipes(_ sender:UISwipeGestureRecognizer)
+    {
+        if (sender.direction == .left)
+        {
+           print("Swipe Left")
+        
+        }
+
+        if (sender.direction == .right)
+        {
+           print("Swipe Right")
+           
+        }
     }
     
     private func setup() {
