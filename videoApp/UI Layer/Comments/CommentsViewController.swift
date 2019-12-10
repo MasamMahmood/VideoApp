@@ -24,7 +24,7 @@ final class CommentsViewController: UIViewController, CommentsViewInput, Floatin
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
-        swipeGesture()
+        swipeGesture()  // swipegesture 
         
     }
     
@@ -53,7 +53,7 @@ final class CommentsViewController: UIViewController, CommentsViewInput, Floatin
         if (sender.direction == .left)
         {
            print("Swipe Left")
-        
+          
         }
 
         if (sender.direction == .right)

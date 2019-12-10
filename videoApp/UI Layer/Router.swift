@@ -14,13 +14,22 @@ class Router {
         
     }
     
-    func openComments(vc: UIViewController?, post: IContentPost) {
+    func openComments(vc: UIViewController?, selectedPostIndex: Int, allPosts: [IContentPost]) {
         if let comments: CommentsViewController = Storyboard.load(from: .main, identifier: "CommentsViewController") as? CommentsViewController {
-            comments.post = post
+            comments.selectedPostIndex = selectedPostIndex
+            comments.post = allPosts
             comments.modalPresentationStyle = .fullScreen
             vc?.show(comments, sender: nil)
         }
     }
+    
+//    func openComments(vc: UIViewController?, post: IContentPost) {
+//        if let comments: CommentsViewController = Storyboard.load(from: .main, identifier: "CommentsViewController") as? CommentsViewController {
+//            comments.post = post
+//            comments.modalPresentationStyle = .fullScreen
+//            vc?.show(comments, sender: nil)
+//        }
+//    }
     
     func bottomVC() -> BottomSheetViewController {
         if let bottom: BottomSheetViewController = Storyboard.load(from: .main, identifier: "BottomSheetViewController") as? BottomSheetViewController {
